@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="菊池凌斗のポートフォリオです。">
+  <meta name="description" content="菊池凌斗のポートフォリオです。ゲーム開発を中心としたプログラミングスキルと作品を紹介しています。">
   <meta name="format-detection" content="telephone=no">
   <link rel="canonical" href="https://kikuchiryoto0108.github.io/">
   <title>菊池凌斗 - ポートフォリオ</title>
@@ -13,7 +13,7 @@
   
   <!-- OGP（SNSシェア用） -->
   <meta property="og:title" content="菊池凌斗 - ポートフォリオ">
-  <meta property="og:description" content="菊池凌斗のポートフォリオです。">
+  <meta property="og:description" content="菊池凌斗のポートフォリオです。ゲーム開発を中心としたプログラミングスキルと作品を紹介しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kikuchiryoto0108.github.io/">
   <meta property="og:image" content="https://kikuchiryoto0108.github.io/ogp.png">
@@ -23,14 +23,283 @@
   
   <!-- フォント・CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>菊池凌斗 - ポートフォリオ</h1>
-    <h3>できること</h3>
-    <p> - DirectX, C++, C#, C言語</p>
-    <p> - HTML, CSS, JavaScript, jQuery</p>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">Ryoto Kikuchi</div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#links" class="nav-link">Links</a></li>
+            <li><a href="#works" class="nav-link">Works</a></li>
+            <li><a href="#activities" class="nav-link">Activities</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">菊池凌斗</h1>
+          <p class="hero-subtitle">Ryoto Kikuchi</p>
+          <p class="hero-role">Game Developer / Programmer</p>
+          <p class="hero-description">
+            ゲーム開発を中心に、DirectX と C++ を用いた<br>
+            創造的なプログラミングに取り組んでいます
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About セクション -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-user"></i>
+          About Me
+        </h2>
+        <div class="content-card">
+          <p class="about-text">
+            ゲーム開発を専門とするプログラマーです。DirectXを使った3Dゲーム開発や、Web技術を活用したフロントエンド開発に取り組んでいます。学内コンテストでの受賞経験があり、個人開発・チーム開発の両方で実績を積んでいます。「面白い」を形にするための技術研鑽を日々行っています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links セクション -->
+    <section id="links" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-link"></i>
+          Links
+        </h2>
+        <div class="links-grid">
+          <a href="https://github.com/kikuchiryoto0108" target="_blank" rel="noopener noreferrer" class="link-card github-link">
+            <div class="link-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">GitHub</span>
+              <span class="link-url">github.com/kikuchiryoto0108</span>
+            </div>
+            <i class="fas fa-external-link-alt link-arrow"></i>
+          </a>
+          
+          <!-- 他のSNSを追加する場合はここに -->
+          <!-- 
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-card twitter-link">
+            <div class="link-icon">
+              <i class="fab fa-twitter"></i>
+            </div>
+            <div class="link-info">
+              <span class="link-title">Twitter</span>
+              <span class="link-url">@your_twitter</span>
+            </div>
+            <i class="fas fa-external-link-alt link-arrow"></i>
+          </a>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills セクション -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-code"></i>
+          Skills & Qualifications
+        </h2>
+        
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3 class="skill-category-title">Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">C言語</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Game Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">DirectX</span>
+              <span class="skill-tag">Unity</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Web Technologies</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">jQuery</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Qualifications & Achievements</h3>
+            <div class="qualification-tags">
+              <span class="qualification-tag">基本情報技術者</span>
+              <span class="qualification-tag award">HEW(学内コンテスト) 一年次銀賞</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works セクション -->
+    <section id="works" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-gamepad"></i>
+          Works
+        </h2>
+        
+        <!-- 個人開発 -->
+        <h3 class="subsection-title">個人開発</h3>
+        <div class="works-list">
+          
+          <!-- PARALLEL WORLD -->
+          <article class="work-card featured">
+            <div class="work-header">
+              <h4 class="work-title">PARALLEL WORLD</h4>
+              <div class="work-badges">
+                <span class="work-badge award">HEW銀賞受賞</span>
+                <span class="work-badge">個人開発</span>
+              </div>
+            </div>
+            <p class="work-description">
+              HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。DirectXを使用したレンダリングエンジンの構築から、ゲームロジックの実装まで全てを担当しました。
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">DirectX</span>
+              <span class="tech-tag">C++</span>
+            </div>
+            <div class="work-links">
+              <a href="https://github.com/kikuchiryoto0108/PARALLEL_WORLD" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- BREAK SHOOTING -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">BREAK SHOOTING</h4>
+              <div class="work-badges">
+                <span class="work-badge">個人開発</span>
+              </div>
+            </div>
+            <p class="work-description">
+              シューティングゲームとブロック崩しの要素を組み合わせた作品です。爽快感のあるアクションと戦略性を両立させることを目指して開発しました。パーティクルシステムや効果音の実装により、プレイヤーに満足感を提供できるゲームに仕上げました。
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">DirectX</span>
+              <span class="tech-tag">C++</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- チーム開発 -->
+        <h3 class="subsection-title">チーム開発</h3>
+        <div class="works-list">
+          
+          <!-- 荒魂 -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">荒魂</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <p class="work-description">
+              和風ホラーをテーマにしたアクションゲームです。チーム開発において、ゲームシステムの実装とメンバー間の技術連携を担当しました。プレイヤーの操作感とホラー演出のバランスを重視した設計を行いました。
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">DirectX</span>
+              <span class="tech-tag">C++</span>
+            </div>
+          </article>
+
+          <!-- 着せ替え -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">着せ替え</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <p class="work-description">
+              キャラクターのカスタマイズを楽しめるシミュレーションゲームです。UI/UX設計とキャラクター管理システムの実装を担当しました。直感的な操作性を重視したインターフェースの構築に注力しました。
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">Unity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities セクション -->
+    <section id="activities" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-users"></i>
+          Activities
+        </h2>
+        
+        <div class="activities-list">
+          
+          <article class="activity-card">
+            <div class="activity-header">
+              <div class="activity-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="activity-title">学生レクリエーション - 統括</h3>
+            </div>
+            <p class="activity-description">
+              学生主体のレクリエーション活動において学生側統括を務め、イベントの企画・運営・進行管理を担当しました。多くの学生が参加する大規模イベントの成功に貢献しました。スケジュール管理やチーム間の調整を通じて、プロジェクトマネジメント能力を向上させました。
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-header">
+              <div class="activity-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h3 class="activity-title">アシスタントスタッフ活動</h3>
+            </div>
+            <p class="activity-description">
+              学内でのアシスタントスタッフとして、体験入学のサポートや、後輩の教育を行っています。プログラミングの基礎から実践的な開発手法まで、幅広い指導を通じて自身の技術理解も深めています。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Ryoto Kikuchi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ戦略相談 - りょぴ</title>
+    <style>
+        @media print {
+            .page-break { page-break-before: always; }
+            body { font-size: 11pt; }
+            .container { box-shadow: none; padding: 20px; }
+        }
+        
+        body {
+            font-family: 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 12px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: white;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            padding: 15px 25px;
+            margin: 30px 0 20px 0;
+            font-size: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .meta-info {
+            background: linear-gradient(135deg, #ecf0f1, #d5dbdb);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .strategy-section {
+            background-color: #e8f6f3;
+            border: 2px solid #1abc9c;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .strategy-table th, .strategy-table td {
+            border: 1px solid #ddd;
+            padding: 14px;
+            text-align: left;
+        }
+        
+        .strategy-table th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .priority-max { background-color: #ffebee; font-weight: bold; }
+        .priority-high { background-color: #fff3e0; }
+        .priority-mid { background-color: #f3e5f5; }
+        .status-done { background-color: #e8f5e9; color: #2e7d32; font-weight: bold; }
+        
+        .question-box {
+            background-color: #fffbf0;
+            border: 2px solid #ffa726;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .question-box h3 {
+            color: #ef6c00;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        
+        .highlight {
+            background-color: #fff59d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .final-request {
+            background-color: #e3f2fd;
+            border: 3px solid #2196f3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        ul { margin-top: 8px; }
+        li { margin-bottom: 6px; }
+        strong { color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 ポートフォリオ戦略相談</h1>
+        
+        <div class="meta-info">
+            <p><strong>志望職種：</strong> クライアントエンジニア（ゲームプログラマー）</p>
+            <p><strong>志望企業：</strong> ニーア系爽快アクション・ホラーゲーム企業</p>
+        </div>
+
+        <div class="strategy-section">
+            <h2>📋 俺のポートフォリオ戦略</h2>
+            
+            <h3>最終構成（5本体制）</h3>
+            
+            <table class="strategy-table">
+                <thead>
+                    <tr>
+                        <th width="12%">優先度</th>
+                        <th width="35%">プロジェクト</th>
+                        <th width="18%">技術</th>
+                        <th width="15%">制作形態</th>
+                        <th width="20%">現在の状態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="priority-max">
+                        <td><strong>最優先</strong></td>
+                        <td><strong>DirectX 3D「BREAK SHOOTING」</strong><br>（TPSアクション・銃+刀+破壊）</td>
+                        <td>DirectX 11<br>C++</td>
+                        <td>個人制作</td>
+                        <td>開発中<br>（ローカル対戦TPS基盤あり）</td>
+                    </tr>
+                    <tr class="priority-high">
+                        <td><strong>高</strong></td>
+                        <td><strong>ゲームクリエイター甲子園</strong><br>（学校制作・本気）</td>
+                        <td>Unity<br>C#</td>
+                        <td>チーム制作<br>（企画・プログラム）</td>
+                        <td>開発中</td>
+                    </tr>
+                    <tr class="priority-mid">
+                        <td>中</td>
+                        <td>Unity ホラーゲーム<br>（甲子園とは別企画）</td>
+                        <td>Unity<br>C#</td>
+                        <td>チーム制作</td>
+                        <td>開発中</td>
+                    </tr>
+                    <tr class="priority-mid">
+                        <td>中</td>
+                        <td>Unity 着せ替えゲーム</td>
+                        <td>Unity<br>C#</td>
+                        <td>チーム制作</td>
+                        <td>継続中</td>
+                    </tr>
+                    <tr class="status-done">
+                        <td>完了</td>
+                        <td>DirectX 2D「荒魂」</td>
+                        <td>DirectX 11<br>C++</td>
+                        <td>チーム制作</td>
+                        <td><strong>完成済み</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>※重要：</strong> DirectX 3Dは、以前制作した「ローカル通信対戦TPS」（既に弾撃って相手を倒せる状態）をシングルプレイ用アクションゲームにリファクタリング中。技術基盤は既存。</p>
+            
+            <p><strong>過去作品の扱い：</strong> マーベラスゲームジャム、三校合同、一年次HEW → ポートフォリオには載せない（質重視）</p>
+        </div>
+
+        <h2>❓ 先生に聞きたい質問</h2>
+
+        <div class="question-box">
+            <h3>Q1. サマーインターンへのα版掲載について</h3>
+            <p><span class="highlight">6月のインターン応募時、DirectX 3Dが未完成（α版）でも載せて良いか？</span></p>
+            <ul>
+                <li>想定状態：移動・射撃・敵AI・基本戦闘は完成、破壊システムは未実装</li>
+                <li>「開発中」として載せる場合の最低限の完成度はどの程度か？</li>
+                <li>「実装済み技術」と「実装予定」を併記する見せ方で問題ないか？</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h3>Q2. 過去作品（低クオリティ）の扱い</h3>
+            <p><span class="highlight">ゲームジャム・三校合同・一年次HEWなどの過去作品は載せるべきか？</span></p>
+            <ul>
+                <li>「質の高い5本」vs「経験豊富な8本」、どちらが企業に評価されるか？</li>
+                <li>クオリティが低くても「制作経験の証拠」として価値があるか？</li>
+                <li>載せる場合、メイン作品と区別した見せ方はアリか？</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h3>Q3. DirectXとUnityのバランス</h3>
+            <p><span class="highlight">現在「DirectX 2本・Unity 3本」だが、このバランスは適切か？</span></p>
+            <ul>
+                <li>クライアントエンジニア志望として、DirectX 2本で技術力アピールは十分か？</li>
+                <li>ホラーゲームもDirectXで作るべきか？（Unity：演出◎、DirectX：技術アピール◎）</li>
+                <li>志望企業（アクション・ホラー）を考えた場合、どちらを重視すべきか？</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h3>Q4. プロジェクト数と完成度の現実性</h3>
+            <p><span class="highlight">5本並行（チーム制作4本含む）は時間的に現実的か？</span></p>
+            <ul>
+                <li>この構成で2026年2月までに全て完成可能と思われるか？</li>
+                <li>遅延リスクが高い場合、何を削減すべきか？</li>
+                <li>「DirectX最優先、他は最低限」の方針で良いか？</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h3>Q5. 全体戦略の方向性確認</h3>
+            <p><span class="highlight">「DirectXで技術力、Unityで完成度・実績」戦略で志望企業に通用するか？</span></p>
+            <ul>
+                <li>この5本構成で、アクション・ホラー系企業への内定は現実的か？</li>
+                <li>致命的に足りない要素や、見落としているリスクはあるか？</li>
+                <li>過去の卒業生で、類似戦略から成功した例はあるか？</li>
+            </ul>
+        </div>
+
+        <div class="final-request">
+            <h2>🙏 先生へのお願い</h2>
+            <p><strong>率直なご意見をお聞かせください：</strong></p>
+            <p>この戦略で進めるべきか、それとも大幅な修正が必要か。<br>
+            特に<strong>「何を捨てて、何に集中すべきか」</strong>の判断をいただきたいです。</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #d32f2f;">
+                正解が分からず作業に集中できない状態なので、明確な方向性を示していただけると助かります。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
