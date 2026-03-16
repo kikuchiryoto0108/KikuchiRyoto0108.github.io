@@ -283,6 +283,20 @@ body {
   font-size: 1rem;
 }
 
+/* PDFリンクのスタイル */
+.pdf-link .link-icon {
+  background-color: #dc2626;
+  color: white;
+}
+
+.pdf-link:hover .link-icon {
+  background-color: #b91c1c;
+}
+
+.pdf-link:hover {
+  border-color: #dc2626;
+}
+
 /* ========================================
    Skills
 ======================================== */
