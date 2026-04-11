@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // カードのホバーエフェクト強化
   initCardEffects();
+  
+  // Worksの詳細表示
+  initWorkDetails();
 });
 
 /**
@@ -18,8 +21,10 @@ function initActiveNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
   
   const observerOptions = {
-    threshold: 0.3,
-    rootMargin: '-100px 0px -50% 0px'
+    // 縦に長いセクションでも確実に反応するように調整
+    threshold: 0.1,
+    // 判定範囲をゆるくする
+    rootMargin: '-80px 0px -20% 0px'
   };
   
   const observer = new IntersectionObserver((entries) => {
@@ -45,6 +50,7 @@ function initActiveNavigation() {
     observer.observe(section);
   });
 }
+
 
 /**
  * スムーススクロール機能
@@ -110,3 +116,54 @@ const handleScroll = debounce(() => {
 }, 100);
 
 window.addEventListener('scroll', handleScroll);
+
+/**
+ * 作品詳細モーダルの初期化
+ */
+function initWorkDetails() {
+  const detailBtns = document.querySelectorAll('.detail-btn');
+
+  // --- モーダルを開く ---
+  detailBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-target');
+      const modal = document.getElementById(targetId);
+      if (!modal) return;
+
+      modal.classList.add('is-open');
+      document.body.classList.add('modal-open');
+    });
+  });
+
+  // --- モーダルを閉じるヘルパー ---
+  function closeModal(modal) {
+    modal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  // --- ✕ ボタンで閉じる ---
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const modal = this.closest('.modal-overlay');
+      if (modal) closeModal(modal);
+    });
+  });
+
+  // --- オーバーレイ（背景暗幕）クリックで閉じる ---
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function (e) {
+      // ウィンドウ本体ではなく背景をクリックした場合のみ閉じる
+      if (e.target === this) {
+        closeModal(this);
+      }
+    });
+  });
+
+  // --- Escキーで閉じる ---
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      const openModal = document.querySelector('.modal-overlay.is-open');
+      if (openModal) closeModal(openModal);
+    }
+  });
+}

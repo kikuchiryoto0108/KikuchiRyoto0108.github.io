@@ -469,6 +469,162 @@ body {
 }
 
 /* ========================================
+   作品詳細モーダル
+======================================== */
+
+/* ボタンスタイル（変更） */
+.detail-btn {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  font-family: var(--font-jp);
+}
+
+.detail-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* オーバーレイ（背景の暗幕） */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  /* 非表示の初期状態 */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* オーバーレイが開いている状態 */
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* モーダルウィンドウ本体 */
+.modal-window {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  width: 100%;
+  max-width: 640px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  /* 登場アニメーション */
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.is-open .modal-window {
+  transform: translateY(0) scale(1);
+}
+
+/* モーダルヘッダー */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-family: var(--font-en);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* モーダルボディ（ここがスクロール対象） */
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* スクロールバーのスタイル */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-light);
+}
+
+/* 詳細セクション（既存スタイル流用） */
+.detail-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.detail-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* body にスクロールロック用クラス */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 1rem;
+    align-items: flex-end;
+  }
+
+  .modal-window {
+    max-height: 85vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+}
+
+/* ========================================
    Activities
 ======================================== */
 .activities-list {
@@ -565,6 +721,15 @@ body {
   .activity-header {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .work-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .detail-btn {
+    order: -1; /* 詳細ボタンを上に配置 */
   }
 }
 
