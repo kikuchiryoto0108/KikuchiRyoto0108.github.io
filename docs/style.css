@@ -49,6 +49,12 @@ body {
   padding: 0 20px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
 /* ========================================
    ヘッダー
 ======================================== */
@@ -111,18 +117,42 @@ body {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
 /* ========================================
    ヒーローセクション
 ======================================== */
 .hero {
   padding: 4rem 0;
-  text-align: center;
   background-color: var(--bg-primary);
 }
 
 .hero-content {
-  max-width: 600px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-left {
+  flex-shrink: 0;
 }
 
 .hero-title {
@@ -144,7 +174,17 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
+}
+
+.hero-right {
+  max-width: 400px;
+}
+
+.hero-school {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
 }
 
 .hero-description {
@@ -152,6 +192,29 @@ body {
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero-right {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0;
+  }
+}
+
 
 /* ========================================
    セクション共通
@@ -188,6 +251,22 @@ body {
   border-left: 4px solid var(--primary-color);
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+}
+
 /* ========================================
    カード共通スタイル
 ======================================== */
@@ -208,6 +287,14 @@ body {
 .activity-card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .content-card,
+  .work-card,
+  .activity-card {
+    padding: 1rem;
+  }
 }
 
 /* ========================================
@@ -283,7 +370,6 @@ body {
   font-size: 1rem;
 }
 
-/* PDFリンクのスタイル */
 .pdf-link .link-icon {
   background-color: #dc2626;
   color: white;
@@ -295,6 +381,12 @@ body {
 
 .pdf-link:hover {
   border-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========================================
@@ -371,6 +463,15 @@ body {
 
 .work-card.featured {
   border-left: 4px solid var(--accent-color);
+}
+
+/* Works セクション内の画像 */
+.work-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 .work-header {
@@ -468,11 +569,38 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+.work-link.youtube {
+  background-color: #ff0000;
+  color: white;
+  border: 1px solid #ff0000;
+}
+
+.work-link.youtube:hover {
+  background-color: #cc0000;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+
+@media (max-width: 768px) {
+  .work-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .detail-btn {
+    order: -1;
+  }
+}
+
 /* ========================================
    作品詳細モーダル
 ======================================== */
-
-/* ボタンスタイル（変更） */
 .detail-btn {
   background-color: white;
   color: var(--primary-color);
@@ -488,7 +616,6 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-/* オーバーレイ（背景の暗幕） */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -498,20 +625,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-
-  /* 非表示の初期状態 */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-/* オーバーレイが開いている状態 */
 .modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
 }
 
-/* モーダルウィンドウ本体 */
 .modal-window {
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -521,17 +644,14 @@ body {
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-
-  /* 登場アニメーション */
   transform: translateY(20px) scale(0.97);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .modal-overlay.is-open .modal-window {
   transform: translateY(0) scale(1);
 }
 
-/* モーダルヘッダー */
 .modal-header {
   display: flex;
   align-items: center;
@@ -568,14 +688,12 @@ body {
   color: var(--text-primary);
 }
 
-/* モーダルボディ（ここがスクロール対象） */
 .modal-body {
   padding: 1.5rem;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
 
-/* スクロールバーのスタイル */
 .modal-body::-webkit-scrollbar {
   width: 6px;
 }
@@ -593,7 +711,6 @@ body {
   background-color: var(--text-light);
 }
 
-/* 詳細セクション（既存スタイル流用） */
 .detail-section {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -606,12 +723,54 @@ body {
   border-top: none;
 }
 
-/* body にスクロールロック用クラス */
+.detail-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.detail-title i {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.detail-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-list li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.7;
+}
+
+.detail-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+}
+
 body.modal-open {
   overflow: hidden;
 }
 
-/* レスポンシブ */
 @media (max-width: 768px) {
   .modal-overlay {
     padding: 1rem;
@@ -665,6 +824,13 @@ body.modal-open {
   line-height: 1.8;
 }
 
+@media (max-width: 768px) {
+  .activity-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* ========================================
    フッター
 ======================================== */
@@ -678,79 +844,4 @@ body.modal-open {
 .footer p {
   color: var(--text-light);
   font-size: 0.9rem;
-}
-
-/* ========================================
-   レスポンシブ対応
-======================================== */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .nav-list {
-    gap: 1.5rem;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .section {
-    padding: 3rem 0;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .work-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .links-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .activity-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .work-links {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .detail-btn {
-    order: -1; /* 詳細ボタンを上に配置 */
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .hero {
-    padding: 2rem 0;
-  }
-  
-  .section {
-    padding: 2rem 0;
-  }
-  
-  .content-card,
-  .work-card,
-  .activity-card {
-    padding: 1rem;
-  }
 }

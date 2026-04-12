@@ -52,13 +52,18 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">菊池凌斗</h1>
-          <p class="hero-subtitle">Ryoto Kikuchi</p>
-          <p class="hero-role">ゲームエンジニア志望</p>
-          <p class="hero-description">
-            ゲーム開発を中心に、DirectX と C++ 、 Unity を用いた<br>
-            創造的なプログラミングに取り組んでいます
-          </p>
+          <div class="hero-left">
+            <h1 class="hero-title">菊池凌斗</h1>
+            <p class="hero-subtitle">Ryoto Kikuchi</p>
+            <p class="hero-role">ゲームエンジニア志望</p>
+          </div>
+          <div class="hero-right">
+            <p class="hero-school">HAL東京4年制3年生 ゲーム学科ゲーム制作コース</p>
+            <p class="hero-description">
+              ゲーム開発を中心に、DirectX と C++ 、 Unity を用いた<br>
+              笑顔と元気とパワーでプログラミングに取り組んでいます。<br>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -72,8 +77,8 @@
         </h2>
         <div class="content-card">
           <p class="about-text">
-            ゲーム開発を専門とするプログラマーです。DirectXを使った3Dゲーム開発や、<br>
-            Web技術を活用したフロントエンド開発に取り組んでいます。<br>
+            ゲーム開発を専門とするプログラマーです。<br>
+            DirectX や Unity を用いてゲーム開発を行っています。<br>
             学内コンテストでの受賞経験があり、個人開発・チーム開発の両方で実績を積んでいます。<br>
             「面白い」を形にするための技術研鑽を日々行っています。<br>
           </p>
@@ -119,7 +124,7 @@
       <div class="container">
         <h2 class="section-title">
           <i class="fas fa-code"></i>
-          Slikks
+          Skills
         </h2>
         
         <div class="skills-container">
@@ -182,6 +187,7 @@
                 <span class="work-badge">個人開発</span>
               </div>
             </div>
+            <img src="assets/images/PARALLEL_WORLD_title.png" alt="パラレルワールドタイトル画像">
             <p class="work-description">
               HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。<br>
               2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。<br>
@@ -204,7 +210,7 @@
             </div>
           </article>
 
-          <!-- BREAK SHOOTING -->
+          <!-- 流体デモ -->
           <article class="work-card">
             <div class="work-header">
               <h4 class="work-title">流体デモ</h4>
@@ -213,12 +219,28 @@
               </div>
             </div>
             <p class="work-description">
-              流体を表現してみたいと思い、スクリーンスペースにて流体を表現しました。<br>
+              流体を表現してみたいと思い、<br>
+              CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
+              GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
+              SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
+              描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
+              最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
               レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
             </p>
             <div class="work-tech">
               <span class="tech-tag">DirectX</span>
               <span class="tech-tag">C++</span>
+            </div>
+
+            <!-- ボタンエリアを変更 -->
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-fluid-demonstration">
+                詳細を表示
+              </button>
+              <a href="https://youtu.be/AsI-bDlKPlA" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
+                <i class="fab fa-youtube"></i>
+                View Video
+              </a>
             </div>
           </article>
         </div>
@@ -245,25 +267,6 @@
               <span class="tech-tag">C++</span>
             </div>
           </article>
-
-          <!-- 着せ替え -->
-          <article class="work-card">
-            <div class="work-header">
-              <h4 class="work-title">着せ替え</h4>
-              <div class="work-badges">
-                <span class="work-badge team">チーム開発</span>
-              </div>
-            </div>
-            <p class="work-description">
-              キャラクターのカスタマイズを楽しめるシミュレーションゲームです。
-              UI/UX設計とキャラクター管理システムの実装を担当しました。
-              直感的な操作性を重視したインターフェースの構築に注力しました。
-            </p>
-            <div class="work-tech">
-              <span class="tech-tag">C#</span>
-              <span class="tech-tag">Unity</span>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -283,7 +286,7 @@
               <div class="activity-icon">
                 <i class="fas fa-users"></i>
               </div>
-              <h3 class="activity-title">学生レクリエーション - 統括</h3>
+              <h3 class="activity-title">学生レ・クリエーション - 統括</h3>
             </div>
             <p class="activity-description">
               学生主体のレクリエーション活動において学生側統括を務め、<br>
@@ -310,6 +313,7 @@
     </section>
 
     <!-- 作品詳細モーダル -->
+    <!-- PALALLEL WORLD -->
     <div class="modal-overlay" id="detail-parallel-world">
       <div class="modal-window">
         <div class="modal-header">
@@ -334,7 +338,7 @@
           <div class="detail-section">
             <h5 class="detail-title">
               <i class="fas fa-wrench"></i>
-              担当・工夫した点
+              工夫した点
             </h5>
             <ul class="detail-list">
               <li>2D / 3D の視点切り替えシステムの設計・実装</li>
@@ -350,6 +354,56 @@
               制作期間・規模
             </h5>
             <p class="detail-text">約3ヶ月間の個人開発プロジェクト</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 流体デモ -->
+    <div class="modal-overlay" id="detail-fluid-demonstration">
+      <div class="modal-window">
+        <div class="modal-header">
+          <h4 class="modal-title">流体デモ</h4>
+          <button class="modal-close" aria-label="閉じる">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-info-circle"></i>
+              作品概要
+            </h5>
+            <p class="detail-text">
+              流体を表現してみたいと思い、<br>
+              CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
+              GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
+              SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
+              描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
+              最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
+              レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-wrench"></i>
+              工夫した点
+            </h5>
+            <ul class="detail-list">
+              <li>深度パスにMINブレンドを採用し、描画順に依存しない正確な水面最前面の深度の取得</li>
+              <li>バイラテラルブラーを4パス適用することで、水面内部はなめらかにつなげつつシルエットはシャープに保ち、粒々感のない連続的な水面を実現</li>
+              <li>レンダリングステートの完全保存・復帰とGPU資源の遅延初期化により、既存のパイプラインに影響を与えずに後付けで流体描画を統合できる設計</li>
+              <li>パズル要素のバランス調整とレベルデザイン</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-calendar-alt"></i>
+              制作期間・規模
+            </h5>
+            <p class="detail-text">約2ヶ月間の個人開発プロジェクト</p>
           </div>
         </div>
       </div>
