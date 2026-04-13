@@ -189,9 +189,12 @@
             </div>
             <img src="assets/images/PARALLEL_WORLD_title.png" alt="パラレルワールドタイトル画像">
             <p class="work-description">
-              HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。<br>
-              2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。<br>
-              C++のコンソールにて制作しました。
+              期間：2025/1 ~ 2025/3 (2ヵ月)<br>
+              制作目的：学内コンテストで金賞を取る<br>
+              開発環境：VisualStudio Console, C++<br>
+              使用技術：Windows Console API, 疑似3Dレイキャスティング<br>
+              内容：2D / 3Dパズルアクションゲーム<br>
+              役割：企画・プログラム・素材集め
             </p>
             <div class="work-tech">
               <span class="tech-tag">Console</span>
@@ -218,14 +221,14 @@
                 <span class="work-badge">個人開発</span>
               </div>
             </div>
+            <img src="assets/images/fluid_demo.png" alt="流体デモ画像">
             <p class="work-description">
-              流体を表現してみたいと思い、<br>
-              CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
-              GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
-              SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
-              描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
-              最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
-              レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
+              期間：2026/2 ~ 2026/4 (3ヵ月)<br>
+              制作目的：自力で流体を表現する<br>
+              開発環境：DirectX, C++, HLSL<br>
+              使用技術：SPH流体シミュレーション, スクリーンスペース流体レンダリング<br>
+              内容：流体デモ<br>
+              役割：プログラム
             </p>
             <div class="work-tech">
               <span class="tech-tag">DirectX</span>
@@ -237,9 +240,13 @@
               <button class="work-link detail-btn" data-target="detail-fluid-demonstration">
                 詳細を表示
               </button>
-              <a href="https://youtu.be/AsI-bDlKPlA" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
+              <a href="https://youtu.be/Zm5Kx3k6fJo" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
                 <i class="fab fa-youtube"></i>
                 View Video
+              </a>
+              <a href="https://github.com/kikuchiryoto0108/fluid_demo" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
               </a>
             </div>
           </article>
@@ -257,14 +264,58 @@
                 <span class="work-badge team">チーム開発</span>
               </div>
             </div>
+            <img src="assets/images/ARATAMA_title.png" alt="荒魂タイトル画像">
             <p class="work-description">
-              和風ホラーをテーマにしたアクションゲームです。<br>
-              チーム開発において、ゲームシステムの実装とメンバー間の技術連携を担当しました。<br>
-              プレイヤーの操作感と爽快感を重視した設計を行いました。<br>
+              期間：2025/10 ~ 2026/3 (6ヵ月)<br>
+              制作目的：おもしろいゲームを作って、コンテストで金賞を取る<br>
+              開発環境：DirectX, C++, HLSL<br>
+              使用技術：<br>
+              内容：2Dハイスピード憑依アクションゲーム<br>
+              役割：プログラム・チームマネジメント補助
             </p>
             <div class="work-tech">
               <span class="tech-tag">DirectX</span>
               <span class="tech-tag">C++</span>
+            </div>
+
+            <!-- ボタンエリアを変更 -->
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-aratama">
+                詳細を表示
+              </button>
+              <a href="https://youtu.be/TjAzu2mmYJc?si=B_fLJnHwCU_07_Xw" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
+                <i class="fab fa-youtube"></i>
+                View Video
+              </a>
+            </div>
+          </article>
+
+          <!-- 通称ツーショ -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">通称ツーショ</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <img src="assets/images/aka-twoshot_title.png" alt="通称ツーショタイトル画像">
+            <p class="work-description">
+              期間：2025/3/17 ~ 2025/3/19 (3日間)<br>
+              制作目的：チーム制作を経験する<br>
+              開発環境：Unity, C#<br>
+              内容：2Dハイスピード憑依アクションゲーム<br>
+              役割：企画・プログラム
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <!-- ボタンエリアを変更 -->
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-aka-twoshot">
+                詳細を表示
+              </button>
             </div>
           </article>
         </div>
@@ -408,6 +459,93 @@
         </div>
       </div>
     </div>
+
+    <!-- 荒魂 -->
+    <div class="modal-overlay" id="detail-aratama">
+      <div class="modal-window">
+        <div class="modal-header">
+          <h4 class="modal-title">荒魂</h4>
+          <button class="modal-close" aria-label="閉じる">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-info-circle"></i>
+              作品概要
+            </h5>
+            <p class="detail-text">
+
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-wrench"></i>
+              担当・工夫した点
+            </h5>
+            <ul class="detail-list">
+              <li></li>
+
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-calendar-alt"></i>
+              制作期間・規模
+            </h5>
+            <p class="detail-text">約5ヶ月間のチーム開発プロジェクト</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通称ツーショ -->
+    <div class="modal-overlay" id="detail-aka-twoshot">
+      <div class="modal-window">
+        <div class="modal-header">
+          <h4 class="modal-title">通称ツーショ</h4>
+          <button class="modal-close" aria-label="閉じる">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-info-circle"></i>
+              作品概要
+            </h5>
+            <p class="detail-text">
+              初めてのチーム制作として、3日間のマーベラスゲームジャムへ参加したときの作品です。<br>
+              もう一人のプログラマーと、プランナー兼デザイナーの方との計3人で参加しました。<br>
+              GitやSourceTreeの使い方や、マージの注意点など、一年生の内に多くの事を学べました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-wrench"></i>
+              担当・工夫した点
+            </h5>
+            <ul class="detail-list">
+              <li></li>
+
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h5 class="detail-title">
+              <i class="fas fa-calendar-alt"></i>
+              制作期間・規模
+            </h5>
+            <p class="detail-text">約3日間のチーム開発プロジェクト</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   
