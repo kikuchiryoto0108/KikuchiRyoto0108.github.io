@@ -137,6 +137,14 @@ function initWorkDetails() {
 
   // --- モーダルを閉じるヘルパー ---
   function closeModal(modal) {
+    // モーダル内のiframeを全て停止
+    const iframes = modal.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+      const src = iframe.src;
+      iframe.src = '';
+      iframe.src = src;
+    });
+  
     modal.classList.remove('is-open');
     document.body.classList.remove('modal-open');
   }
