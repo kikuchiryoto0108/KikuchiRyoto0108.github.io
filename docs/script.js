@@ -167,3 +167,62 @@ function initWorkDetails() {
     }
   });
 }
+
+// DOMContentLoaded 内に追加
+document.addEventListener('DOMContentLoaded', function() {
+  initActiveNavigation();
+  initSmoothScroll();
+  initCardEffects();
+  initWorkDetails();
+  initSliders();       // ← 追加
+});
+
+/**
+ * モーダル内スライダーの初期化
+ */
+function initSliders() {
+  const sliders = document.querySelectorAll('.modal-slider');
+
+  sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.slider-slide');
+    const prevBtn = slider.querySelector('.slider-prev');
+    const nextBtn = slider.querySelector('.slider-next');
+    const dotsContainer = slider.querySelector('.slider-dots');
+    let current = 0;
+
+    if (slides.length <= 1) return;
+
+    // ドット生成
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('slider-dot');
+      dot.setAttribute('aria-label', `スライド ${i + 1}`);
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+    function goTo(index) {
+      // 動画のスライドから離れるとき、iframe を止める
+      const currentIframe = slides[current].querySelector('iframe');
+      if (currentIframe) {
+        const src = currentIframe.src;
+        currentIframe.src = '';
+        currentIframe.src = src;
+      }
+
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+
+      current = (index + slides.length) % slides.length;
+
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+  });
+}
