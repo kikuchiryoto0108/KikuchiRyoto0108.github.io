@@ -370,19 +370,6 @@ body {
   font-size: 1rem;
 }
 
-.pdf-link .link-icon {
-  background-color: #dc2626;
-  color: white;
-}
-
-.pdf-link:hover .link-icon {
-  background-color: #b91c1c;
-}
-
-.pdf-link:hover {
-  border-color: #dc2626;
-}
-
 @media (max-width: 768px) {
   .links-grid {
     grid-template-columns: 1fr;
@@ -421,7 +408,9 @@ body {
 }
 
 .skill-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -432,6 +421,14 @@ body {
   transition: var(--transition);
 }
 
+.skill-tag svg,
+.skill-tag-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 .skill-tag:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
@@ -439,7 +436,9 @@ body {
 }
 
 .qualification-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.4rem 0.9rem;
   background-color: var(--success-color);
   color: white;
@@ -733,6 +732,20 @@ body {
   }
 }
 
+
+/* 画像1枚のみのモーダル用（スライダー矢印なし） */
+.modal-image-single {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.modal-image-single img {
+  width: 100%;
+  display: block;
+}
 
 /* ========================================
    作品詳細モーダル

@@ -104,17 +104,6 @@
             </div>
             <i class="fas fa-external-link-alt link-arrow"></i>
           </a>
-          
-          <!-- ポートフォリオPDFリンク -->
-          <a href="assets/documents/rirekisyo.pdf" target="_blank" rel="noopener noreferrer" class="link-card pdf-link">
-            <div class="link-icon">
-              <i class="fas fa-file-pdf"></i>
-            </div>
-            <div class="link-info">
-              <span class="link-title">履歴書</span>
-            </div>
-            <i class="fas fa-external-link-alt link-arrow"></i>
-          </a>
         </div>
       </div>
     </section>
@@ -131,35 +120,55 @@
           <div class="skill-category">
             <h3 class="skill-category-title">プログラミング言語</h3>
             <div class="skill-tags">
-              <span class="skill-tag">C++</span>
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">C言語</span>
+              <span class="skill-tag"><img src="assets/icons/cplusplus.svg" alt="" class="skill-tag-icon">C++</span>
+              <span class="skill-tag"><img src="assets/icons/csharp.svg" alt="" class="skill-tag-icon">C#</span>
+              <span class="skill-tag"><img src="assets/icons/c.svg" alt="" class="skill-tag-icon">C言語</span>
+              <span class="skill-tag"><img src="assets/icons/hlsl.svg" alt="" class="skill-tag-icon">HLSL</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h3 class="skill-category-title">ゲーム開発</h3>
             <div class="skill-tags">
-              <span class="skill-tag">DirectX</span>
-              <span class="skill-tag">Unity</span>
+              <span class="skill-tag"><svg viewBox="0 0 20 20"><path d="M10 1L19 10L10 19L1 10Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>DirectX</span>
+              <span class="skill-tag"><img src="assets/icons/unity.svg" alt="" class="skill-tag-icon">Unity</span>
+              <span class="skill-tag"><img src="assets/icons/unrealengine.svg" alt="" class="skill-tag-icon">Unreal Engine 5</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h3 class="skill-category-title">ウェブ技術</h3>
             <div class="skill-tags">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">jQuery</span>
+              <span class="skill-tag"><img src="assets/icons/html5.svg" alt="" class="skill-tag-icon">HTML</span>
+              <span class="skill-tag"><img src="assets/icons/css3.svg" alt="" class="skill-tag-icon">CSS</span>
+              <span class="skill-tag"><img src="assets/icons/javascript.svg" alt="" class="skill-tag-icon">JavaScript</span>
+              <span class="skill-tag"><img src="assets/icons/jquery.svg" alt="" class="skill-tag-icon">jQuery</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><img src="assets/icons/visualstudio.svg" alt="" class="skill-tag-icon">Visual Studio</span>
+              <span class="skill-tag"><img src="assets/icons/vscode.svg" alt="" class="skill-tag-icon">VSCode</span>
+              <span class="skill-tag"><img src="assets/icons/github.svg" alt="" class="skill-tag-icon">GitHub</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-category-title">その他ツール</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><img src="assets/icons/maya.svg" alt="" class="skill-tag-icon">Maya</span>
+              <span class="skill-tag"><img src="assets/icons/blender.svg" alt="" class="skill-tag-icon">Blender</span>
+              <span class="skill-tag"><img src="assets/icons/photoshop.svg" alt="" class="skill-tag-icon">Photoshop</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h3 class="skill-category-title">資格・実績</h3>
             <div class="qualification-tags">
-              <span class="qualification-tag">基本情報技術者</span>
-              <span class="qualification-tag award">HEW(学内コンテスト) 一年次銀賞</span>
+              <span class="qualification-tag"><i class="fas fa-certificate"></i>基本情報技術者</span>
+              <span class="qualification-tag award"><i class="fas fa-trophy"></i>HEW(学内コンテスト) 一年次銀賞</span>
             </div>
           </div>
         </div>
@@ -201,7 +210,7 @@
               <span class="tech-tag">C++</span>
             </div>
 
-            <!-- ボタンエリアを変更 -->
+            <!-- ボタンエリア -->
             <div class="work-links">
               <button class="work-link detail-btn" data-target="detail-parallel-world">
                 詳細を表示
@@ -212,6 +221,90 @@
               </a>
             </div>
           </article>
+
+          <!-- モーダル: PARALLEL WORLD -->
+          <div class="modal-overlay" id="detail-parallel-world">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">PARALLEL WORLD</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- スライダー -->
+                <div class="modal-slider">
+                  <div class="slider-track">
+                    <!-- スライド1: 動画 -->
+                    <div class="slider-slide active">
+                      <div class="slide-video">
+                        <iframe
+                          src="https://www.youtube.com/embed/UDQnZ_E_EnA"
+                          title="PARALLEL WORLD動画"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                    <!-- スライド2: 画像 -->
+                    <div class="slider-slide">
+                      <img src="assets/images/PARALLEL_WORLD/parallel1.png" alt="パラレルワールド画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/PARALLEL_WORLD/parallel2.png" alt="パラレルワールド画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/PARALLEL_WORLD/parallel3.png" alt="パラレルワールド画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/PARALLEL_WORLD/parallel4.png" alt="パラレルワールド画像">
+                    </div>
+                  </div>
+                  <button class="slider-btn slider-prev" aria-label="前へ">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="slider-btn slider-next" aria-label="次へ">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="slider-dots"></div>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。<br>
+                    2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。<br>
+                    C++のコンソールにて制作しました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li>2D / 3D の視点切り替えシステムの設計・実装</li>
+                    <li>コンソール上でのレンダリング処理の最適化</li>
+                    <li>プレイヤーの直感的な操作を実現するキャラクター制御</li>
+                    <li>パズル要素のバランス調整とレベルデザイン</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">約3ヶ月間の個人開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- 流体デモ -->
           <article class="work-card">
@@ -235,7 +328,7 @@
               <span class="tech-tag">C++</span>
             </div>
 
-            <!-- ボタンエリアを変更 -->
+            <!-- ボタンエリア -->
             <div class="work-links">
               <button class="work-link detail-btn" data-target="detail-fluid-demonstration">
                 詳細を表示
@@ -250,6 +343,210 @@
               </a>
             </div>
           </article>
+
+          <!-- モーダル: 流体デモ -->
+          <div class="modal-overlay" id="detail-fluid-demonstration">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">流体デモ</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- スライダー -->
+                <div class="modal-slider">
+                  <div class="slider-track">
+                    <!-- スライド1: 動画 -->
+                    <div class="slider-slide active">
+                      <div class="slide-video">
+                        <iframe
+                          src="https://www.youtube.com/embed/Zm5Kx3k6fJo"
+                          title="PARALLEL WORLD動画"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                    <!-- スライド2: 画像 -->
+                    <div class="slider-slide">
+                      <img src="assets/images/fluid_demo/fluid1.png" alt="流体デモ画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/fluid_demo/fluid2.png" alt="流体デモ画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/fluid_demo/fluid3.png" alt="流体デモ画像">
+                    </div>
+                  </div>
+                  <button class="slider-btn slider-prev" aria-label="前へ">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="slider-btn slider-next" aria-label="次へ">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="slider-dots"></div>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    流体を表現してみたいと思い、<br>
+                    CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
+                    GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
+                    SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
+                    描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
+                    最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
+                    レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li>深度パスにMINブレンドを採用し、描画順に依存しない正確な水面最前面の深度の取得</li>
+                    <li>バイラテラルブラーを4パス適用することで、水面内部はなめらかにつなげつつシルエットはシャープに保ち、粒々感のない連続的な水面を実現</li>
+                    <li>レンダリングステートの完全保存・復帰とGPU資源の遅延初期化により、既存のパイプラインに影響を与えずに後付けで流体描画を統合できる設計</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">約2ヶ月間の個人開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action3D -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">Action3D</h4>
+              <div class="work-badges">
+                <span class="work-badge">個人開発</span>
+              </div>
+            </div>
+            <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
+            <p class="work-description">
+              期間：2026/6 ~ 開発中<br>
+              制作目的：DirectX 11の生APIからゲームエンジンを自作する<br>
+              開発環境：Visual Studio 2022, DirectX11, C++, HLSL<br>
+              使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, X3DAudio立体音響, 独自アセットベイクシステム<br>
+              内容：3Dアクションゲーム<br>
+              役割：エンジン設計・プログラム全般
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">DirectX</span>
+              <span class="tech-tag">C++</span>
+            </div>
+
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-action3d">
+                詳細を表示
+              </button>
+              <a href="https://github.com/kikuchiryoto0108/Action3D" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- モーダル: Action3D -->
+          <div class="modal-overlay" id="detail-action3d">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">Action3D</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-image-single">
+                  <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    DirectX11の生APIから自作したゲームエンジン上で動く3Dアクションゲームです。<br>
+                    描画・物理・アセット管理・オーディオまで、エンジンの基盤部分から個人で設計・実装しました。<br>
+                    AI画像生成→TripoAIでモデリング／テクスチャ化→Mixamoでリギング／アニメーション→Blenderでテクスチャ張り直し、という工程で最短でアセットを用意し、実装に集中できる体制を作りました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    アセット管理・エンジン設計
+                  </h5>
+                  <ul class="detail-list">
+                    <li>モデル形式はGLBを採用。メッシュ・スケルトン等が1ファイルにまとまりアセット管理がシンプルなうえ、バイナリとJSONが分離されているためパース後すぐGPUバッファへコピーでき、業界標準でもある点を重視</li>
+                    <li>glTFパーサはcgltfを採用。軽量・シングルヘッダで導入コストが低く、glTF仕様に忠実な構造でライブラリの内部挙動に依存せず実装できる点、Assimp等の多形式ライブラリと比べ依存を最小化できる点が決め手</li>
+                    <li>AssetManagerを導入し、pngとhdrで分岐してHDR環境マップにも対応。ロード時間を約40〜50%短縮</li>
+                    <li>アセット追加をenumと配列のインデックス同期に頼らず1か所の変更だけで反映できるよう、X-Macroを導入してバグの可能性を排除</li>
+                    <li>シェーダーを毎回csoから個別ロードしていたのをshader_libraryに一元化し、起動時にまとめて読み込むことでロード時間を短縮</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    責務分離・当たり判定
+                  </h5>
+                  <ul class="detail-list">
+                    <li>初期はManagerに衝突判定ロジックが混在していたが、Physics_Worldを新設して分離。距離判定・地面判定をここに集約し、将来的なレイキャスト等の拡張余地も確保</li>
+                    <li>LayerMaskはUnityのPhysics Layer Matrixと同様の設計を採用。GameObjectは自分のレイヤーを1つ持つだけで、衝突ルールはPhysicsWorldが持つLayer×Layerの2次元bool配列で管理し、ゲームロジックから独立させた</li>
+                    <li>剣の当たり判定にはAABBでは表現しづらい形状のためOBBを導入。球との判定はローカル座標系に変換することでAABB vs Sphereに帰着させて実装。それ以外の空間分割等はYAGNIの原則で見送り、必要になった際に実測データと共に導入する方針</li>
+                    <li>Collisionの押し戻し判定もPhysics_Worldに集約し、レイヤーごとに動く/動かないを設定することで無駄な処理を排除</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    パフォーマンス最適化
+                  </h5>
+                  <ul class="detail-list">
+                    <li>起動時間短縮のためアセットベイクシステムを自作。カスタムバイナリ(.pak)に30個以上のアセットを1ファイルへ統合し、MP3は事前にPCMデコードして格納。音声ロードを734ms→37msに短縮し、起動時間全体を約36%削減</li>
+                    <li>VFS抽象化によりDebugビルドは生ファイル、Releaseビルドは.pakを参照するよう切り替え可能。ソース更新時のみ再ベイクする差分ベイク機能も実装</li>
+                    <li>立体音響はX3DAudio(XAudio2)で実装。ステレオ→モノラル変換をRelease時のアセットベイクに組み込み、ロード時間短縮と設計上の正しさを両立</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-bug"></i>
+                    トラブルシューティング
+                  </h5>
+                  <ul class="detail-list">
+                    <li>DebugDrawの3D描画がUI描画の後に呼ばれ、View/Projectionが2D用の直交投影に切り替わって画面外に飛ぶ不具合が発生。「Managerが直接呼び出す」案と「Scene::Draw3D/Draw2Dを分離する」案を比較し、将来のシーン別ポストエフェクト等を見据えて後者を採用。シーン切り替えで無駄にInit/UninitされていたDebugDrawもManager管理に移し、エンジンのライフサイクルに一致させた</li>
+                    <li>アニメーションが切り替わらない不具合では、まずImGuiにアニメメタデータを表示する仕組みを実装して原因切り分け。コードは正常でBlenderのエクスポート起因と特定し、さらに深掘りするとアーマチュア構造自体に問題があると判明。Blenderのアペンド機能でスキン付きfbxからアニメーションを持ってきて正常なリグに差し替えて解決</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年6月から開発中の個人開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- チーム開発 -->
@@ -278,7 +575,7 @@
               <span class="tech-tag">C++</span>
             </div>
 
-            <!-- ボタンエリアを変更 -->
+            <!-- ボタンエリア -->
             <div class="work-links">
               <button class="work-link detail-btn" data-target="detail-aratama">
                 詳細を表示
@@ -289,6 +586,86 @@
               </a>
             </div>
           </article>
+
+          <!-- モーダル: 荒魂 -->
+          <div class="modal-overlay" id="detail-aratama">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">荒魂</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- スライダー -->
+                <div class="modal-slider">
+                  <div class="slider-track">
+                    <!-- スライド1: 動画 -->
+                    <div class="slider-slide active">
+                      <div class="slide-video">
+                        <iframe
+                          src="https://www.youtube.com/embed/TjAzu2mmYJc"
+                          title="PARALLEL WORLD動画"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                    <!-- スライド2: 画像 -->
+                    <div class="slider-slide">
+                      <img src="assets/images/aratama/kougousii.png" alt="荒魂画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/aratama/yugami.png" alt="荒魂画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/aratama/boss_attack.png" alt="荒魂画像">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/aratama/boss.png" alt="荒魂画像">
+                    </div>
+                  </div>
+                  <button class="slider-btn slider-prev" aria-label="前へ">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="slider-btn slider-next" aria-label="次へ">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="slider-dots"></div>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li></li>
+
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">約5ヶ月間のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- 通称ツーショ -->
           <article class="work-card">
@@ -311,13 +688,394 @@
               <span class="tech-tag">C#</span>
             </div>
 
-            <!-- ボタンエリアを変更 -->
+            <!-- ボタンエリア -->
             <div class="work-links">
               <button class="work-link detail-btn" data-target="detail-aka-twoshot">
                 詳細を表示
               </button>
             </div>
           </article>
+
+          <!-- モーダル: 通称ツーショ -->
+          <div class="modal-overlay" id="detail-aka-twoshot">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">通称ツーショ</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    初めてのチーム制作として、3日間のマーベラスゲームジャムへ参加したときの作品です。<br>
+                    もう一人のプログラマーと、プランナー兼デザイナーの方との計3人で参加しました。<br>
+                    GitやSourceTreeの使い方や、マージの注意点など、一年生の内に多くの事を学べました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li></li>
+
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">約3日間のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NeoZip(笑TIME) -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">NeoZip</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <img src="assets/images/NeoZip/title.png" alt="NeoZipタイトル画像">
+            <p class="work-description">
+              期間：2025/3 ~ 2026/7 (5か月間)<br>
+              制作目的：コンテストに出す<br>
+              開発環境：Unity, C#<br>
+              内容：2Dジッパーパズルゲーム<br>
+              役割：メインプログラマー・Git管理
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <!-- ボタンエリア -->
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-neozip">
+                詳細を表示
+              </button>
+            </div>
+          </article>
+
+          <!-- モーダル: NeoZip(笑TIME) -->
+          <div class="modal-overlay" id="detail-neozip">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">NeoZip</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    神ゲーや甲子園に出すために考え、制作した作品です。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li></li>
+
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">約3日間のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- まともな一日(NADONIEZU) -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">まともな一日</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <img src="assets/images/nadoniezu/title.png" alt="まともな一日画像">
+            <p class="work-description">
+              期間：2026/4 ~ 開発中(2人チーム)<br>
+              制作目的：クビにされた会社に最終出社日で復讐する体験を作る<br>
+              開発環境：Unity, C#<br>
+              使用技術：3Dオフィス自由探索, NPC分岐会話, オブジェクト破壊, スコア別マルチエンディング<br>
+              内容：社会人シミュ×復讐×破壊コメディ<br>
+              役割：企画・プログラム
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-nadoniezu">
+                詳細を表示
+              </button>
+              <a href="https://github.com/ryoppiP-P/NADONIEZU" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- モーダル: まともな一日(NADONIEZU) -->
+          <div class="modal-overlay" id="detail-nadoniezu">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">まともな一日</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- スライダー -->
+                <div class="modal-slider">
+                  <div class="slider-track">
+                    <div class="slider-slide active">
+                      <img src="assets/images/nadoniezu/title.png" alt="まともな一日 タイトル画面">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/nadoniezu/intro.png" alt="まともな一日 クビ理由表示">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/nadoniezu/talk.png" alt="まともな一日 NPC会話">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/nadoniezu/talkChoice.png" alt="まともな一日 4択会話選択">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/nadoniezu/breakBefore.png" alt="まともな一日 破壊前の書類棚">
+                    </div>
+                    <div class="slider-slide">
+                      <img src="assets/images/nadoniezu/breakAfter.png" alt="まともな一日 破壊後の書類棚">
+                    </div>
+                  </div>
+                  <button class="slider-btn slider-prev" aria-label="前へ">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="slider-btn slider-next" aria-label="次へ">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="slider-dots"></div>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    クビを宣告された最終出社日、上司やNPCとの会話とオフィスの自由な破壊を通して「復讐」していく社会人シミュ×破壊コメディです。<br>
+                    開始時にランダムでクビ理由(業績不振によるリストラ／上司との対立／会社の不正を告発した報復 等)が付与され、9:00の出社から17:00の退勤までの1日をオフィス内を自由に歩き回りながら過ごします。<br>
+                    NPCとの会話は毎回「恋愛／普通／狂人／反抗」の4択で分岐し、PCモニターを殴って割る・上司の机を破壊する、など好きなオブジェクトを自由に破壊できます。破壊するほどプレイ中は非表示の「IKDスコア」が上昇し、選んだルート傾向とスコアの組み合わせで結末が変化します。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li>ランダムなクビ理由の付与、NPCとの4択分岐会話、自由なオブジェクト破壊を軸にした「最終出社日1日完結」のゲームフローを設計</li>
+                    <li>プレイ中は見えない「IKDスコア」を破壊行動に応じて加算し、選んだ会話ルートの傾向とスコアを組み合わせて結末を分岐させるエンディング設計を担当</li>
+                    <li>UnityRoomだけでなく、AndroidのGooglePlayなどでの展開を見据え、プラットフォームごとに異なる操作方法(タップ移動／WASD+マウス／スティック)に対応する設計</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年4月から開発中、2人体制のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 浸水限界(hora-) -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">浸水限界</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <img src="assets/images/hora/title.png" alt="浸水限界画像">
+            <p class="work-description">
+              期間：2026/5 ~ 開発中(7人チーム)<br>
+              制作目的：緊迫感のある探索型ホラーゲームを作る<br>
+              開発環境：Unity, C#<br>
+              内容：浸水した潜水艦から脱出する探索型ホラーゲーム<br>
+              役割：リーダー・企画・メインプログラマー・PM・Git管理
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-hora">
+                詳細を表示
+              </button>
+              <a href="https://github.com/ryoppiP-P/hora-" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- モーダル: 浸水限界(hora-) -->
+          <div class="modal-overlay" id="detail-hora">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">浸水限界</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-image-single">
+                  <img src="assets/images/hora/title.png" alt="浸水限界画像">
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    浸水し沈みゆく潜水艦の中を探索し、脱出を目指すホラーゲームです。<br>
+                    艦内を移動してログやアイテム、進行の手がかりを発見しながら設備を復旧して新エリアを解放し、敵に見つからないよう息を潜めて進みます。<br>
+                    敵と遭遇したら息を止めて回避、限界が来たら逃走フェーズへ移行して隠れてやり過ごす、というサイクルを繰り返しながらより深部を目指します。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li>7人体制のリーダー・PMとして企画立案からスケジュール管理、メインプログラマー、Gitでのブランチ運用・マージ管理までチーム全体を統括</li>
+                    <li>Playerや全体の最低限の基盤制作、マップ制作等を担当</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年5月から開発中、7人体制のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ドールタウン(DressUp) -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">ドールタウン</h4>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <img src="assets/images/dressup/kisekaeGamen.png" alt="ドールタウン画像">
+            <p class="work-description">
+              期間：2026/5 ~ 開発中(8人チーム)<br>
+              制作目的：みんなの好みを詰め込んだ着せ替えゲームを作りたい<br>
+              開発環境：Unity, C#<br>
+              内容：着せ替えゲーム<br>
+              役割：リーダー・企画・メインプログラマー・PM・Git管理
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-dressup">
+                詳細を表示
+              </button>
+              <a href="https://github.com/ryoppiP-P/DressUp" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- モーダル: ドールタウン(DressUp) -->
+          <div class="modal-overlay" id="detail-dressup">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">ドールタウン</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-image-single">
+                  <img src="assets/images/dressup/kisekaeGamen.png" alt="ドールタウン画像">
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    着せ替えゲームです。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当・工夫した点
+                  </h5>
+                  <ul class="detail-list">
+                    <li>8人体制のリーダー・PMとして企画立案からスケジュール管理、メインプログラマー、Gitでのブランチ運用・マージ管理までチーム全体を統括</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年5月から開発中、8人体制のチーム開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -340,10 +1098,11 @@
               <h3 class="activity-title">学生レ・クリエーション - 統括</h3>
             </div>
             <p class="activity-description">
-              学生主体のレクリエーション活動において学生側統括を務め、<br>
-              イベントの企画・運営・進行管理を担当しました。<br>
-              約3500人の学生が参加する大規模イベントの成功に貢献しました。<br>
-              スケジュール管理やチーム間の調整を通じて、プロジェクトマネジメント能力を向上させました。<br>
+              約3,500名の学生が参加する学内最大規模のレクリエーションイベントにて、学生側統括2名のうち1名を担当しました。<br>
+              5月から12月1日の本番までの約7ヶ月間、8名の統括陣をまとめながら、<br>
+              309名の運営スタッフを率いて企画・運営を推進。企画部署の責任者として催しの立案を主導し、<br>
+              当日は全体の進行設計から司会・進行、想定外のトラブル対応までを担いました。<br>
+              長期プロジェクトのスケジュール管理と部署間の調整を通じて、チームを動かす力と現場での判断力を養いました。
             </p>
           </article>
 
@@ -355,311 +1114,20 @@
               <h3 class="activity-title">アシスタントスタッフ活動</h3>
             </div>
             <p class="activity-description">
-              学内でのアシスタントスタッフとして、<br>
-              体験入学のサポートや、授業準備のマニュアルの作成、後輩の教育などを行いました。
+              学内のアシスタントスタッフとして2年間活動し、体験入学の運営サポートを中心に担当しました。<br>
+              2年次には学科リーダーとして、体験入学当日の学科責任者を務めるとともに、<br>
+              授業準備マニュアルの作成や後輩の育成にも取り組みました。<br>
+              属人的だった業務を仕組みとして整理し、次の世代へ引き継ぐ経験から、<br>
+              チーム全体の成果を底上げする視点を学びました。
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 作品詳細モーダル -->
-    <!-- PALALLEL WORLD -->
-    <div class="modal-overlay" id="detail-parallel-world">
-      <div class="modal-window">
-        <div class="modal-header">
-          <h4 class="modal-title">PARALLEL WORLD</h4>
-          <button class="modal-close" aria-label="閉じる">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- スライダー -->
-          <div class="modal-slider">
-            <div class="slider-track">
-              <!-- スライド1: 動画 -->
-              <div class="slider-slide active">
-                <div class="slide-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/UDQnZ_E_EnA"
-                    title="PARALLEL WORLD動画"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <!-- スライド2: 画像 -->
-              <div class="slider-slide">
-                <img src="assets/images/PARALLEL_WORLD/parallel1.png" alt="パラレルワールド画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/PARALLEL_WORLD/parallel2.png" alt="パラレルワールド画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/PARALLEL_WORLD/parallel3.png" alt="パラレルワールド画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/PARALLEL_WORLD/parallel4.png" alt="パラレルワールド画像">
-              </div>
-            </div>
-            <button class="slider-btn slider-prev" aria-label="前へ">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn slider-next" aria-label="次へ">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="slider-dots"></div>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-info-circle"></i>
-              作品概要
-            </h5>
-            <p class="detail-text">
-              HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。<br>
-              2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。<br>
-              C++のコンソールにて制作しました。
-            </p>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-wrench"></i>
-              工夫した点
-            </h5>
-            <ul class="detail-list">
-              <li>2D / 3D の視点切り替えシステムの設計・実装</li>
-              <li>コンソール上でのレンダリング処理の最適化</li>
-              <li>プレイヤーの直感的な操作を実現するキャラクター制御</li>
-              <li>パズル要素のバランス調整とレベルデザイン</li>
-            </ul>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-calendar-alt"></i>
-              制作期間・規模
-            </h5>
-            <p class="detail-text">約3ヶ月間の個人開発プロジェクト</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 流体デモ -->
-    <div class="modal-overlay" id="detail-fluid-demonstration">
-      <div class="modal-window">
-        <div class="modal-header">
-          <h4 class="modal-title">流体デモ</h4>
-          <button class="modal-close" aria-label="閉じる">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- スライダー -->
-          <div class="modal-slider">
-            <div class="slider-track">
-              <!-- スライド1: 動画 -->
-              <div class="slider-slide active">
-                <div class="slide-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/Zm5Kx3k6fJo"
-                    title="PARALLEL WORLD動画"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <!-- スライド2: 画像 -->
-              <div class="slider-slide">
-                <img src="assets/images/fluid_demo/fluid1.png" alt="流体デモ画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/fluid_demo/fluid2.png" alt="流体デモ画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/fluid_demo/fluid3.png" alt="流体デモ画像">
-              </div>
-            </div>
-            <button class="slider-btn slider-prev" aria-label="前へ">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn slider-next" aria-label="次へ">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="slider-dots"></div>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-info-circle"></i>
-              作品概要
-            </h5>
-            <p class="detail-text">
-              流体を表現してみたいと思い、<br>
-              CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
-              GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
-              SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
-              描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
-              最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
-              レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
-            </p>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-wrench"></i>
-              工夫した点
-            </h5>
-            <ul class="detail-list">
-              <li>深度パスにMINブレンドを採用し、描画順に依存しない正確な水面最前面の深度の取得</li>
-              <li>バイラテラルブラーを4パス適用することで、水面内部はなめらかにつなげつつシルエットはシャープに保ち、粒々感のない連続的な水面を実現</li>
-              <li>レンダリングステートの完全保存・復帰とGPU資源の遅延初期化により、既存のパイプラインに影響を与えずに後付けで流体描画を統合できる設計</li>
-            </ul>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-calendar-alt"></i>
-              制作期間・規模
-            </h5>
-            <p class="detail-text">約2ヶ月間の個人開発プロジェクト</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 荒魂 -->
-    <div class="modal-overlay" id="detail-aratama">
-      <div class="modal-window">
-        <div class="modal-header">
-          <h4 class="modal-title">荒魂</h4>
-          <button class="modal-close" aria-label="閉じる">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- スライダー -->
-          <div class="modal-slider">
-            <div class="slider-track">
-              <!-- スライド1: 動画 -->
-              <div class="slider-slide active">
-                <div class="slide-video">
-                  <iframe
-                    src="https://www.youtube.com/embed/TjAzu2mmYJc"
-                    title="PARALLEL WORLD動画"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <!-- スライド2: 画像 -->
-              <div class="slider-slide">
-                <img src="assets/images/aratama/kougousii.png" alt="荒魂画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/aratama/yugami.png" alt="荒魂画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/aratama/boss_attack.png" alt="荒魂画像">
-              </div>
-              <div class="slider-slide">
-                <img src="assets/images/aratama/boss.png" alt="荒魂画像">
-              </div>
-            </div>
-            <button class="slider-btn slider-prev" aria-label="前へ">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn slider-next" aria-label="次へ">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="slider-dots"></div>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-info-circle"></i>
-              作品概要
-            </h5>
-            <p class="detail-text">
-
-            </p>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-wrench"></i>
-              担当・工夫した点
-            </h5>
-            <ul class="detail-list">
-              <li></li>
-
-            </ul>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-calendar-alt"></i>
-              制作期間・規模
-            </h5>
-            <p class="detail-text">約5ヶ月間のチーム開発プロジェクト</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 通称ツーショ -->
-    <div class="modal-overlay" id="detail-aka-twoshot">
-      <div class="modal-window">
-        <div class="modal-header">
-          <h4 class="modal-title">通称ツーショ</h4>
-          <button class="modal-close" aria-label="閉じる">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-info-circle"></i>
-              作品概要
-            </h5>
-            <p class="detail-text">
-              初めてのチーム制作として、3日間のマーベラスゲームジャムへ参加したときの作品です。<br>
-              もう一人のプログラマーと、プランナー兼デザイナーの方との計3人で参加しました。<br>
-              GitやSourceTreeの使い方や、マージの注意点など、一年生の内に多くの事を学べました。
-            </p>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-wrench"></i>
-              担当・工夫した点
-            </h5>
-            <ul class="detail-list">
-              <li></li>
-
-            </ul>
-          </div>
-
-          <div class="detail-section">
-            <h5 class="detail-title">
-              <i class="fas fa-calendar-alt"></i>
-              制作期間・規模
-            </h5>
-            <p class="detail-text">約3日間のチーム開発プロジェクト</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   
-
   <!-- フッター -->
   <footer class="footer">
     <div class="container">
