@@ -277,8 +277,8 @@
                   </h5>
                   <p class="detail-text">
                     HEWと呼ばれる学内コンテストの一年次にて銀賞を獲得した作品です。<br>
-                    2Dと3Dの世界を行き来する独創的なゲームシステムが特徴で、視点切り替えによるパズル要素を実装しました。<br>
-                    C++のコンソールにて制作しました。
+                    C++のWindowsコンソールアプリとして制作した、2D/3Dを自在に切り替えて遊ぶ新感覚パズルアクションゲームです。<br>
+                    ステージに散らばる「ホットスター★」を5つ集めるとゴール前の氷が融けて道が開き、ゴールを目指します。一定間隔で点灯/消灯するバーナーなど、2D/3D共通のギミックも配置しました。
                   </p>
                 </div>
 
@@ -288,10 +288,10 @@
                     工夫した点
                   </h5>
                   <ul class="detail-list">
-                    <li>2D / 3D の視点切り替えシステムの設計・実装</li>
-                    <li>コンソール上でのレンダリング処理の最適化</li>
-                    <li>プレイヤーの直感的な操作を実現するキャラクター制御</li>
-                    <li>パズル要素のバランス調整とレベルデザイン</li>
+                    <li>2D/3Dで同じ3次元タイル配列(マップデータ)を共有し、切り替えは描画方式(トップダウン2D／自前のレイキャスティング3D)だけを切り替える設計に。同じマップを2通りの視点で解釈させることでパズルとしての整合性を保った</li>
+                    <li>Windows Console API上に、水平・垂直方向のレイ角度とFOVから距離ベースで壁を判定する自前のレイキャスティングエンジンを実装。タイル種別ごとに色とUnicodeブロック文字を対応させたルックアップテーブルを用意し、文字だけのコンソール画面でも奥行きのある擬似3D描画を実現</li>
+                    <li>スター収集による氷の融解、一定間隔で作動するバーナーなど、2D/3D両モードで成立するパズルギミックを設計・実装</li>
+                    <li>操作方法を2D(A/D移動+SPACEジャンプ)と3D(WASD移動+SPACEジャンプ)でモードに合わせて切り替え、直感的に遊べるキャラクター制御を実装</li>
                   </ul>
                 </div>
 
@@ -566,9 +566,9 @@
               期間：2025/10 ~ 2026/3 (6ヵ月)<br>
               制作目的：おもしろいゲームを作って、コンテストで金賞を取る<br>
               開発環境：DirectX, C++, HLSL<br>
-              使用技術：<br>
+              使用技術：State/Strategyパターン(ボスAI), XAudio2/Media Foundation(独自オーディオエンジン), SDL3(入力抽象化)<br>
               内容：2Dハイスピード憑依アクションゲーム<br>
-              役割：プログラム・チームマネジメント補助
+              役割：プログラム(ボスAI・衝突判定・オーディオ・敵AI 等)・チームマネジメント補助
             </p>
             <div class="work-tech">
               <span class="tech-tag">DirectX</span>
@@ -583,6 +583,10 @@
               <a href="https://youtu.be/TjAzu2mmYJc?si=B_fLJnHwCU_07_Xw" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
                 <i class="fab fa-youtube"></i>
                 View Video
+              </a>
+              <a href="https://github.com/kikuchiryoto0108/ARATAMA" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
               </a>
             </div>
           </article>
@@ -641,18 +645,53 @@
                     作品概要
                   </h5>
                   <p class="detail-text">
-
+                    爽快感を重視した2Dハイスピード憑依アクションゲームで、コントローラーでのみ操作します。<br>
+                    本リポジトリには担当部分のみを公開していますが、Result画面・衝突判定(高速移動時のすり抜け防止含む)・ボスAI・各種ギミック・オーディオ・敵AI・ステージ基盤・入力管理・ゲームコントローラ・動画再生と、ゲームシステムの中核を幅広く担当しました。
                   </p>
                 </div>
 
                 <div class="detail-section">
                   <h5 class="detail-title">
                     <i class="fas fa-wrench"></i>
-                    担当・工夫した点
+                    オーディオシステム
                   </h5>
                   <ul class="detail-list">
-                    <li></li>
+                    <li>XAudio2とMedia Foundationで独自のオーディオエンジンを構築。X-Macroでリソース登録を自動化し、定義ファイルに1行追加するだけでenum・パス配列・BGMフラグが揃うようにして拡張コストを下げた</li>
+                    <li>SEの多重再生は、SEごとに8個のSourceVoiceを循環させるラウンドロビン方式のプールで対応し、連続再生時の音切れを防止。BGMのフェードイン/アウト・クロスフェードも自前で実装し、音量はマスター×カテゴリ×個別の3階層で制御できるようにした</li>
+                  </ul>
+                </div>
 
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    衝突判定
+                  </h5>
+                  <ul class="detail-list">
+                    <li>動的オブジェクトと静的ブロックを分離し、毎フレームO(N²)ではなくO(N×M)まで判定量を削減。敵vs敵やギミックvsギミックなど不要な組み合わせはスキップし、カメラ範囲外のオブジェクトは判定自体を止めてコストをカット</li>
+                    <li>高速移動時のすり抜け(トンネリング)対策として、X軸・Y軸を分離して順に解決する方式を導入。「プレイヤーvsギロチンは上から落ちてきた時だけヒット」のようなゲーム性に応じた専用判定も実装し、オブジェクトが詰まった場合は8方向探索で最寄りの安全地点へ復帰させる処理も組み込んだ</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    ボスAI設計
+                  </h5>
+                  <ul class="detail-list">
+                    <li>Stateパターンで Wait→Normal→Charge→Special→Stunned→Defeated の状態遷移を管理し、Strategyパターンで攻撃をIBossAttackインターフェースに抽象化してBossAttackManagerがランダム選択する設計に。通常攻撃5種・必殺技2種を独立クラス化し、直前と同じ攻撃を避けるロジックも実装したことで攻撃パターンの追加が容易になった</li>
+                    <li>仮面の破壊演出はコリジョン処理中に即実行するとクラッシュするため、遅延破壊キューに貯めてフレーム終わりにまとめて処理。撃破演出もSTAGGER→PLAYER_MOVE→POSSESS_FLASH→SCREAM→DOOR_CLOSE→FADE_OUTの6フェーズで管理した</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    敵AI・その他システム
+                  </h5>
+                  <ul class="detail-list">
+                    <li>敵AIはPATROL→CHASE→ATTACK→COOLDOWNのステートマシンで制御。レイキャストによる視線判定で壁越しの発見を防ぎ、進行方向の足元をチェックして崖からの落下も回避。武器種別(KATANA/KANABO/BOW/SPEAR)ごとにパラメータを変えるだけで、同じAIコードから異なるキャラ性を出せる設計にした</li>
+                    <li>SDL3のゲームパッドとキーボード/マウスをCommand構造体に正規化し、ゲーム本体が入力デバイスを意識しなくて済む統一入力インターフェースを実装。最後に使用したデバイスを自動判定し、UI表示や攻撃方向に反映させた</li>
+                    <li>ランキング送信はWinInetで実装したHTTPS通信をGoogle Apps Script経由で実施。302リダイレクトの手動追跡や、非同期ロード＋通信失敗時のタイムアウトフォールバックを組み込み、通信状況に関わらずプレイ体験が崩れないようにした</li>
                   </ul>
                 </div>
 
@@ -661,7 +700,7 @@
                     <i class="fas fa-calendar-alt"></i>
                     制作期間・規模
                   </h5>
-                  <p class="detail-text">約5ヶ月間のチーム開発プロジェクト</p>
+                  <p class="detail-text">2025年10月〜2026年3月(6ヶ月間)のチーム開発プロジェクト</p>
                 </div>
               </div>
             </div>
@@ -740,7 +779,7 @@
             </div>
           </div>
 
-          <!-- NeoZip(笑TIME) -->
+          <!-- NeoZip -->
           <article class="work-card">
             <div class="work-header">
               <h4 class="work-title">NeoZip</h4>
@@ -750,10 +789,11 @@
             </div>
             <img src="assets/images/NeoZip/title.png" alt="NeoZipタイトル画像">
             <p class="work-description">
-              期間：2025/3 ~ 2026/7 (5か月間)<br>
-              制作目的：コンテストに出す<br>
+              期間：2026/3 ~ 2026/7 (5ヶ月間)<br>
+              制作目的：「掴んで引く」ジッパーギミックを軸にした2Dアクションゲームを作る<br>
               開発環境：Unity, C#<br>
-              内容：2Dジッパーパズルゲーム<br>
+              使用技術：Zipperギミック, マルチポイントZipLine(Catmull-Rom補間), AudioMixer, 暗号化セーブ<br>
+              内容：ジッパーを引いて風景を開閉し、道を切り拓いていく2Dアクションゲーム<br>
               役割：メインプログラマー・Git管理
             </p>
             <div class="work-tech">
@@ -769,7 +809,7 @@
             </div>
           </article>
 
-          <!-- モーダル: NeoZip(笑TIME) -->
+          <!-- モーダル: NeoZip -->
           <div class="modal-overlay" id="detail-neozip">
             <div class="modal-window">
               <div class="modal-header">
@@ -779,24 +819,53 @@
                 </button>
               </div>
               <div class="modal-body">
+                <div class="modal-image-single">
+                  <img src="assets/images/NeoZip/title.png" alt="NeoZipタイトル画像">
+                </div>
+
                 <div class="detail-section">
                   <h5 class="detail-title">
                     <i class="fas fa-info-circle"></i>
                     作品概要
                   </h5>
                   <p class="detail-text">
-                    神ゲーや甲子園に出すために考え、制作した作品です。
+                    ステージのあらゆる場所にある「ジッパー」を掴んで引くことで、壁や床ごと風景を開け閉めして道を切り拓いていく2Dアクションゲームです。<br>
+                    ジッパーを引くと隠れていた足場やギミックが姿を現し、全開まで引ききると自動で開閉が続く「オートモード」や、特定のジッパーを開ききると発動する強化状態「マスターモード」など、ジッパーというモチーフ一つから複数のギミックへ展開しています。
                   </p>
                 </div>
 
                 <div class="detail-section">
                   <h5 class="detail-title">
                     <i class="fas fa-wrench"></i>
-                    担当・工夫した点
+                    ジッパーギミック
                   </h5>
                   <ul class="detail-list">
-                    <li></li>
+                    <li>基本のZipperギミックをドラッグ量に応じて開閉するpivotベースで実装。一定量ドラッグすると自動で最後まで開閉が続く「オートモード」や、全開後は二度と閉じない「ロック」など、ステージ演出に必要な派生挙動を掴み系オブジェクト共通のIGrabbableインターフェース上に集約</li>
+                    <li>ZipperWallでは、ジッパーの開閉度をイージング付きで壁パーツの位置・回転に反映し、見えない壁コライダーの有効/無効も自動追従。Editor上でも開閉具合をプレビューできるようにし、レベルデザイン側の調整をしやすくした</li>
+                    <li>ZipLine / ZipLineMultiPointでは、Catmull-Rom補間による複数地点を通る滑走ラインを実装。移動中のジャンプ離脱、障害物衝突での強制離脱、お供キャラだけを滑走させ続ける仕様、終点でのコイン射出演出などを組み込んだ</li>
+                    <li>マスターモードでは、特定のジッパーを開ききると発動する強化状態を実装。スピードブースト・攻撃力アップ・ZipLine高速化などをフラグの組み合わせで切り替えられる設計にし、専用オブジェクトの表示切り替えやBGM切り替え、シーン遷移時の強制終了処理まで一括管理</li>
+                  </ul>
+                </div>
 
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    オーディオ・シーン管理
+                  </h5>
+                  <ul class="detail-list">
+                    <li>AudioManagerをAudioMixer連携で構築し、SEのラウンドロビン再生・ループSE・3D位置SE・BGMクロスフェードを1本化。SoundLibraryでBGM/SEをenum管理し、鳴らす側は種類を指定するだけで済む設計にした</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    プレイヤー基盤・セーブロード・UI
+                  </h5>
+                  <ul class="detail-list">
+                    <li>プレイヤーの移動・ジャンプ基盤を担当。コヨーテタイム・ジャンプバッファなど、操作感の作り込みを行った</li>
+                    <li>セーブデータをAES暗号化して保存(SaveManager/SaveCrypto)。初期適用処理をSaveApplierに分離し、責務を分けた設計に</li>
+                    <li>HP管理・コイン/スターのUI表示・一方通行床・ゴール/デスゾーンなど、ゲーム基盤まわりの実装とGitのブランチ運用・マージ管理を担当</li>
                   </ul>
                 </div>
 
@@ -805,7 +874,7 @@
                     <i class="fas fa-calendar-alt"></i>
                     制作期間・規模
                   </h5>
-                  <p class="detail-text">約3日間のチーム開発プロジェクト</p>
+                  <p class="detail-text">2026年3月〜2026年7月(5ヶ月間)、プログラマー5名・プランナー2名・デザイナー3名の計10人体制のチーム開発プロジェクト</p>
                 </div>
               </div>
             </div>
