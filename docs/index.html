@@ -186,126 +186,6 @@
         <!-- 個人開発 -->
         <h3 class="subsection-title">個人開発</h3>
         <div class="works-list">
-
-          <!-- Action3D -->
-          <article class="work-card">
-            <div class="work-header">
-              <h4 class="work-title">Action3D</h4>
-              <div class="work-badges">
-                <span class="work-badge">個人開発</span>
-              </div>
-            </div>
-            <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
-            <p class="work-description">
-              期間：2026/6 ~ 開発中<br>
-              制作目的：DirectX11で自分が考える最高のゲームを作る<br>
-              開発環境：Visual Studio 2022, DirectX11, C++, HLSL<br>
-              使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, X3DAudio立体音響, 独自アセットベイクシステム<br>
-              内容：3Dアクションゲーム<br>
-              役割：エンジン設計・プログラム全般
-            </p>
-            <div class="work-tech">
-              <span class="tech-tag">DirectX</span>
-              <span class="tech-tag">C++</span>
-            </div>
-
-            <div class="work-links">
-              <button class="work-link detail-btn" data-target="detail-action3d">
-                詳細を表示
-              </button>
-              <a href="https://github.com/kikuchiryoto0108/Action3D" target="_blank" rel="noopener noreferrer" class="work-link primary">
-                <i class="fab fa-github"></i>
-                View Repository
-              </a>
-            </div>
-          </article>
-
-          <!-- モーダル: Action3D -->
-          <div class="modal-overlay" id="detail-action3d">
-            <div class="modal-window">
-              <div class="modal-header">
-                <h4 class="modal-title">Action3D</h4>
-                <button class="modal-close" aria-label="閉じる">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="modal-image-single">
-                  <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-info-circle"></i>
-                    作品概要
-                  </h5>
-                  <p class="detail-text">
-                    DirectX11の生APIから自作したゲームエンジン上で動く3Dアクションゲームです。<br>
-                    描画・物理・アセット管理・オーディオまで、エンジンの基盤部分から個人で設計・実装しました。<br>
-                    AI画像生成→TripoAIでモデリング／テクスチャ化→Mixamoでリギング／アニメーション→Blenderでテクスチャ張り直し、という工程で最短でアセットを用意し、実装に集中できる体制を作りました。
-                  </p>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-wrench"></i>
-                    アセット管理・エンジン設計
-                  </h5>
-                  <ul class="detail-list">
-                    <li>モデル形式はGLBを採用。メッシュ・スケルトン等が1ファイルにまとまりアセット管理がシンプルなうえ、バイナリとJSONが分離されているためパース後すぐGPUバッファへコピーでき、業界標準でもある点を重視</li>
-                    <li>glTFパーサはcgltfを採用。軽量・シングルヘッダで導入コストが低く、glTF仕様に忠実な構造でライブラリの内部挙動に依存せず実装できる点、Assimp等の多形式ライブラリと比べ依存を最小化できる点が決め手</li>
-                    <li>AssetManagerを導入し、pngとhdrで分岐してHDR環境マップにも対応。ロード時間を約40〜50%短縮</li>
-                    <li>アセット追加をenumと配列のインデックス同期に頼らず1か所の変更だけで反映できるよう、X-Macroを導入してバグの可能性を排除</li>
-                    <li>シェーダーを毎回csoから個別ロードしていたのをshader_libraryに一元化し、起動時にまとめて読み込むことでロード時間を短縮</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-wrench"></i>
-                    責務分離・当たり判定
-                  </h5>
-                  <ul class="detail-list">
-                    <li>初期はManagerに衝突判定ロジックが混在していたが、Physics_Worldを新設して分離。距離判定・地面判定をここに集約し、将来的なレイキャスト等の拡張余地も確保</li>
-                    <li>LayerMaskはUnityのPhysics Layer Matrixと同様の設計を採用。GameObjectは自分のレイヤーを1つ持つだけで、衝突ルールはPhysicsWorldが持つLayer×Layerの2次元bool配列で管理し、ゲームロジックから独立させた</li>
-                    <li>剣の当たり判定にはAABBでは表現しづらい形状のためOBBを導入。球との判定はローカル座標系に変換することでAABB vs Sphereに帰着させて実装。それ以外の空間分割等はYAGNIの原則で見送り、必要になった際に実測データと共に導入する方針</li>
-                    <li>Collisionの押し戻し判定もPhysics_Worldに集約し、レイヤーごとに動く/動かないを設定することで無駄な処理を排除</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-wrench"></i>
-                    パフォーマンス最適化
-                  </h5>
-                  <ul class="detail-list">
-                    <li>起動時間短縮のためアセットベイクシステムを自作。カスタムバイナリ(.pak)に30個以上のアセットを1ファイルへ統合し、MP3は事前にPCMデコードして格納。音声ロードを734ms→37msに短縮し、起動時間全体を約36%削減</li>
-                    <li>VFS抽象化によりDebugビルドは生ファイル、Releaseビルドは.pakを参照するよう切り替え可能。ソース更新時のみ再ベイクする差分ベイク機能も実装</li>
-                    <li>立体音響はX3DAudio(XAudio2)で実装。ステレオ→モノラル変換をRelease時のアセットベイクに組み込み、ロード時間短縮と設計上の正しさを両立</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-bug"></i>
-                    トラブルシューティング
-                  </h5>
-                  <ul class="detail-list">
-                    <li>DebugDrawの3D描画がUI描画の後に呼ばれ、View/Projectionが2D用の直交投影に切り替わって画面外に飛ぶ不具合が発生。「Managerが直接呼び出す」案と「Scene::Draw3D/Draw2Dを分離する」案を比較し、将来のシーン別ポストエフェクト等を見据えて後者を採用。シーン切り替えで無駄にInit/UninitされていたDebugDrawもManager管理に移し、エンジンのライフサイクルに一致させた</li>
-                    <li>アニメーションが切り替わらない不具合では、まずImGuiにアニメメタデータを表示する仕組みを実装して原因切り分け。コードは正常でBlenderのエクスポート起因と特定し、さらに深掘りするとアーマチュア構造自体に問題があると判明。Blenderのアペンド機能でスキン付きfbxからアニメーションを持ってきて正常なリグに差し替えて解決</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-calendar-alt"></i>
-                    制作期間・規模
-                  </h5>
-                  <p class="detail-text">2026年6月から開発中の個人開発プロジェクト</p>
-                </div>
-              </div>
-            </div>
-          </div>
           
           <!-- PARALLEL WORLD -->
           <article class="work-card featured">
@@ -543,6 +423,126 @@
                     制作期間・規模
                   </h5>
                   <p class="detail-text">約2ヶ月間の個人開発プロジェクト</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action3D -->
+          <article class="work-card">
+            <div class="work-header">
+              <h4 class="work-title">Action3D</h4>
+              <div class="work-badges">
+                <span class="work-badge">個人開発</span>
+              </div>
+            </div>
+            <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
+            <p class="work-description">
+              期間：2026/6 ~ 開発中<br>
+              制作目的：DirectX11で自分が考える最高のゲームを作る<br>
+              開発環境：Visual Studio 2022, DirectX11, C++, HLSL<br>
+              使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, X3DAudio立体音響, 独自アセットベイクシステム<br>
+              内容：3Dアクションゲーム<br>
+              役割：エンジン設計・プログラム全般
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">DirectX</span>
+              <span class="tech-tag">C++</span>
+            </div>
+
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-action3d">
+                詳細を表示
+              </button>
+              <a href="https://github.com/kikuchiryoto0108/Action3D" target="_blank" rel="noopener noreferrer" class="work-link primary">
+                <i class="fab fa-github"></i>
+                View Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- モーダル: Action3D -->
+          <div class="modal-overlay" id="detail-action3d">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">Action3D</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-image-single">
+                  <img src="assets/images/action3d/title.png" alt="Action3Dタイトル画像">
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    DirectX11の生APIから自作したゲームエンジン上で動く3Dアクションゲームです。<br>
+                    描画・物理・アセット管理・オーディオまで、エンジンの基盤部分から個人で設計・実装しました。<br>
+                    AI画像生成→TripoAIでモデリング／テクスチャ化→Mixamoでリギング／アニメーション→Blenderでテクスチャ張り直し、という工程で最短でアセットを用意し、実装に集中できる体制を作りました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    アセット管理・エンジン設計
+                  </h5>
+                  <ul class="detail-list">
+                    <li>モデル形式はGLBを採用。メッシュ・スケルトン等が1ファイルにまとまりアセット管理がシンプルなうえ、バイナリとJSONが分離されているためパース後すぐGPUバッファへコピーでき、業界標準でもある点を重視</li>
+                    <li>glTFパーサはcgltfを採用。軽量・シングルヘッダで導入コストが低く、glTF仕様に忠実な構造でライブラリの内部挙動に依存せず実装できる点、Assimp等の多形式ライブラリと比べ依存を最小化できる点が決め手</li>
+                    <li>AssetManagerを導入し、pngとhdrで分岐してHDR環境マップにも対応。ロード時間を約40〜50%短縮</li>
+                    <li>アセット追加をenumと配列のインデックス同期に頼らず1か所の変更だけで反映できるよう、X-Macroを導入してバグの可能性を排除</li>
+                    <li>シェーダーを毎回csoから個別ロードしていたのをshader_libraryに一元化し、起動時にまとめて読み込むことでロード時間を短縮</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    責務分離・当たり判定
+                  </h5>
+                  <ul class="detail-list">
+                    <li>初期はManagerに衝突判定ロジックが混在していたが、Physics_Worldを新設して分離。距離判定・地面判定をここに集約し、将来的なレイキャスト等の拡張余地も確保</li>
+                    <li>LayerMaskはUnityのPhysics Layer Matrixと同様の設計を採用。GameObjectは自分のレイヤーを1つ持つだけで、衝突ルールはPhysicsWorldが持つLayer×Layerの2次元bool配列で管理し、ゲームロジックから独立させた</li>
+                    <li>剣の当たり判定にはAABBでは表現しづらい形状のためOBBを導入。球との判定はローカル座標系に変換することでAABB vs Sphereに帰着させて実装。それ以外の空間分割等はYAGNIの原則で見送り、必要になった際に実測データと共に導入する方針</li>
+                    <li>Collisionの押し戻し判定もPhysics_Worldに集約し、レイヤーごとに動く/動かないを設定することで無駄な処理を排除</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    パフォーマンス最適化
+                  </h5>
+                  <ul class="detail-list">
+                    <li>起動時間短縮のためアセットベイクシステムを自作。カスタムバイナリ(.pak)に30個以上のアセットを1ファイルへ統合し、MP3は事前にPCMデコードして格納。音声ロードを734ms→37msに短縮し、起動時間全体を約36%削減</li>
+                    <li>VFS抽象化によりDebugビルドは生ファイル、Releaseビルドは.pakを参照するよう切り替え可能。ソース更新時のみ再ベイクする差分ベイク機能も実装</li>
+                    <li>立体音響はX3DAudio(XAudio2)で実装。ステレオ→モノラル変換をRelease時のアセットベイクに組み込み、ロード時間短縮と設計上の正しさを両立</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-bug"></i>
+                    トラブルシューティング
+                  </h5>
+                  <ul class="detail-list">
+                    <li>DebugDrawの3D描画がUI描画の後に呼ばれ、View/Projectionが2D用の直交投影に切り替わって画面外に飛ぶ不具合が発生。「Managerが直接呼び出す」案と「Scene::Draw3D/Draw2Dを分離する」案を比較し、将来のシーン別ポストエフェクト等を見据えて後者を採用。シーン切り替えで無駄にInit/UninitされていたDebugDrawもManager管理に移し、エンジンのライフサイクルに一致させた</li>
+                    <li>アニメーションが切り替わらない不具合では、まずImGuiにアニメメタデータを表示する仕組みを実装して原因切り分け。コードは正常でBlenderのエクスポート起因と特定し、さらに深掘りするとアーマチュア構造自体に問題があると判明。Blenderのアペンド機能でスキン付きfbxからアニメーションを持ってきて正常なリグに差し替えて解決</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年6月から開発中の個人開発プロジェクト</p>
                 </div>
               </div>
             </div>
@@ -923,10 +923,6 @@
                 <i class="fas fa-play"></i>
                 Play on unityroom
               </a>
-              <a href="https://github.com/ryoppiP-P/NADONIEZU" target="_blank" rel="noopener noreferrer" class="work-link primary">
-                <i class="fab fa-github"></i>
-                View Repository
-              </a>
             </div>
           </article>
 
@@ -1034,10 +1030,6 @@
               <a href="https://unityroom.com/games/flooding_limit" target="_blank" rel="noopener noreferrer" class="work-link unityroom">
                 <i class="fas fa-play"></i>
                 Play on unityroom
-              </a>
-              <a href="https://github.com/ryoppiP-P/hora-" target="_blank" rel="noopener noreferrer" class="work-link primary">
-                <i class="fab fa-github"></i>
-                View Repository
               </a>
             </div>
           </article>
@@ -1152,10 +1144,6 @@
               <a href="https://unityroom.com/games/lilial" target="_blank" rel="noopener noreferrer" class="work-link unityroom">
                 <i class="fas fa-play"></i>
                 Play on unityroom
-              </a>
-              <a href="https://github.com/ryoppiP-P/DressUp" target="_blank" rel="noopener noreferrer" class="work-link primary">
-                <i class="fab fa-github"></i>
-                View Repository
               </a>
             </div>
           </article>
