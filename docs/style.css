@@ -959,6 +959,16 @@ body.modal-open {
   gap: 1.5rem;
 }
 
+.activity-card img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  object-fit: contain;
+  background-color: var(--bg-secondary);
+}
+
 .activity-header {
   display: flex;
   align-items: center;
