@@ -542,6 +542,7 @@ body {
 
 .work-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -590,6 +591,18 @@ body {
 
 .work-link.unityroom:hover {
   background-color: #0891b2;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.work-link.document {
+  background-color: #b45309;
+  color: white;
+  border: 1px solid #b45309;
+}
+
+.work-link.document:hover {
+  background-color: #92400e;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
