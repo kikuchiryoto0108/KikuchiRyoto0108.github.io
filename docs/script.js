@@ -183,7 +183,47 @@ document.addEventListener('DOMContentLoaded', function() {
   initCardEffects();
   initWorkDetails();
   initSliders();       // ← 追加
+  initScrollReveal();  // ← 追加
 });
+
+/**
+ * スクロールで要素をふわっと出現させる
+ */
+function initScrollReveal() {
+  const groups = [
+    document.querySelectorAll('.hero-stats .stat-tile'),
+    document.querySelectorAll('.section-title'),
+    document.querySelectorAll('.subsection-title'),
+    document.querySelectorAll('#about .content-card'),
+    document.querySelectorAll('.link-card'),
+    document.querySelectorAll('.skill-category'),
+    document.querySelectorAll('.work-card'),
+    document.querySelectorAll('.activity-card'),
+  ];
+
+  const supportsIO = 'IntersectionObserver' in window;
+
+  groups.forEach(list => {
+    list.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${Math.min(i, 6) * 70}ms`;
+      if (!supportsIO) el.classList.add('is-visible');
+    });
+  });
+
+  if (!supportsIO) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  groups.forEach(list => list.forEach(el => io.observe(el)));
+}
 
 /**
  * モーダル内スライダーの初期化
