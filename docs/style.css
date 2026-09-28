@@ -294,6 +294,15 @@ body {
   }
 }
 
+/* 印刷・PDF化のときは、画面外の要素も含めて全て表示する */
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ========================================
    セクション共通
 ======================================== */
@@ -543,7 +552,8 @@ body {
 }
 
 /* Works セクション内の画像 */
-.work-card img {
+.work-card img,
+.work-card video {
   width: 100%;
   height: auto;
   max-height: 400px;
@@ -551,6 +561,10 @@ body {
   margin-bottom: 1rem;
   object-fit: contain;
   background-color: var(--bg-secondary);
+}
+
+.work-card video {
+  display: block;
 }
 
 .work-header {

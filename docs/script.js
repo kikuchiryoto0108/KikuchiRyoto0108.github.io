@@ -216,8 +216,14 @@ function initScrollReveal() {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
+        const el = entry.target;
+        el.classList.add('is-visible');
+        io.unobserve(el);
+        // 出現し終わったら演出用の状態を外して、元のスタイル(ホバー等)に戻す
+        setTimeout(() => {
+          el.classList.remove('reveal', 'is-visible');
+          el.style.transitionDelay = '';
+        }, 1100);
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
