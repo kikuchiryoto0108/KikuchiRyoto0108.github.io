@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="菊池凌斗（Ryoto Kikuchi）のポートフォリオサイト。HAL東京ゲーム学科在籍。DirectX11のゲームエンジン自作からUnityでのチーム開発まで、ゲーム開発を中心としたプログラミングスキルと作品を紹介しています。">
+  <meta name="description" content="菊池凌斗（Ryoto Kikuchi）のポートフォリオサイト。HAL東京ゲーム学科在籍。DirectX11のフレームワーク自作からUnityでのチーム開発まで、ゲーム開発を中心としたプログラミングスキルと作品を紹介しています。">
   <meta name="format-detection" content="telephone=no">
   <meta name="author" content="菊池凌斗 (Ryoto Kikuchi)">
   <meta name="robots" content="index, follow">
@@ -19,7 +19,7 @@
   <!-- OGP（SNSシェア用） -->
   <meta property="og:site_name" content="菊池凌斗 ポートフォリオ">
   <meta property="og:title" content="菊池凌斗 ポートフォリオ | ゲームエンジニア志望 (Ryoto Kikuchi)">
-  <meta property="og:description" content="菊池凌斗（Ryoto Kikuchi）のポートフォリオサイト。DirectX11のゲームエンジン自作からUnityでのチーム開発まで、ゲーム開発の作品とスキルを紹介しています。">
+  <meta property="og:description" content="菊池凌斗（Ryoto Kikuchi）のポートフォリオサイト。DirectX11のフレームワーク自作からUnityでのチーム開発まで、ゲーム開発の作品とスキルを紹介しています。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:url" content="https://kikuchiryoto0108.github.io/">
@@ -41,7 +41,7 @@
     "url": "https://kikuchiryoto0108.github.io/",
     "image": "https://kikuchiryoto0108.github.io/assets/images/action3d/title.png",
     "jobTitle": "ゲームエンジニア志望",
-    "description": "ゲーム開発を専門とするプログラマー。DirectX11のゲームエンジン自作からUnityでのチーム開発・チームリードまで。",
+    "description": "ゲーム開発を専門とするプログラマー。DirectX11のフレームワーク自作からUnityでのチーム開発・チームリードまで。",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "HAL東京"
@@ -105,7 +105,7 @@
           <div class="hero-right">
             <p class="hero-school">HAL東京4年制3年生 ゲーム学科ゲーム制作コース</p>
             <p class="hero-description">
-              DirectX11でエンジンを自作するところから、Unityでのチームリードまで、<br>
+              DirectX11でフレームワークを自作するところから、Unityでのチームリードまで、<br>
               「仕組みを自分の手で作って理解する」ことにこだわってゲームを作っています。<br>
             </p>
           </div>
@@ -286,7 +286,7 @@
               使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, X3DAudio立体音響, 独自アセットベイクシステム<br>
               実測：起動時間を計測ベースで最適化し 約1.86秒→約1.25秒に短縮<br>
               内容：3Dアクションゲーム<br>
-              役割：エンジン設計・プログラム全般
+              役割：フレームワーク設計・プログラム全般
             </p>
             <div class="work-tech">
               <span class="tech-tag">DirectX</span>
@@ -353,8 +353,8 @@
                     作品概要
                   </h5>
                   <p class="detail-text">
-                    DirectX11の生APIから自作したゲームエンジン上で動く3Dアクションゲームです。<br>
-                    描画・物理・アセット管理・オーディオまで、エンジンの基盤部分から個人で設計・実装しました。<br>
+                    DirectX11の生APIから自作したフレームワーク上で動く3Dアクションゲームです。<br>
+                    描画・物理・アセット管理・オーディオまで、フレームワークの基盤部分から個人で設計・実装しました。<br>
                     AI画像生成→TripoAIでモデリング／テクスチャ化→Mixamoでリギング／アニメーション→Blenderでテクスチャ張り直し、という工程で最短でアセットを用意し、実装に集中できる体制を作りました。
                   </p>
                 </div>
@@ -362,7 +362,7 @@
                 <div class="detail-section">
                   <h5 class="detail-title">
                     <i class="fas fa-wrench"></i>
-                    アセット管理・エンジン設計
+                    アセット管理・フレームワーク設計
                   </h5>
                   <ul class="detail-list">
                     <li>モデル形式はGLBを採用。メッシュ・スケルトン等が1ファイルにまとまりアセット管理がシンプルなうえ、バイナリとJSONが分離されているためパース後すぐGPUバッファへコピーでき、業界標準でもある点を重視</li>
@@ -404,7 +404,7 @@
                     トラブルシューティング
                   </h5>
                   <ul class="detail-list">
-                    <li>DebugDrawの3D描画がUI描画の後に呼ばれ、View/Projectionが2D用の直交投影に切り替わって画面外に飛ぶ不具合が発生。「Managerが直接呼び出す」案と「Scene::Draw3D/Draw2Dを分離する」案を比較し、将来のシーン別ポストエフェクト等を見据えて後者を採用。シーン切り替えで無駄にInit/UninitされていたDebugDrawもManager管理に移し、エンジンのライフサイクルに一致させた</li>
+                    <li>DebugDrawの3D描画がUI描画の後に呼ばれ、View/Projectionが2D用の直交投影に切り替わって画面外に飛ぶ不具合が発生。「Managerが直接呼び出す」案と「Scene::Draw3D/Draw2Dを分離する」案を比較し、将来のシーン別ポストエフェクト等を見据えて後者を採用。シーン切り替えで無駄にInit/UninitされていたDebugDrawもManager管理に移し、フレームワークのライフサイクルに一致させた</li>
                     <li>アニメーションが切り替わらない不具合では、まずImGuiにアニメメタデータを表示する仕組みを実装して原因切り分け。コードは正常でBlenderのエクスポート起因と特定し、さらに深掘りするとアーマチュア構造自体に問題があると判明。Blenderのアペンド機能でスキン付きfbxからアニメーションを持ってきて正常なリグに差し替えて解決</li>
                   </ul>
                 </div>
