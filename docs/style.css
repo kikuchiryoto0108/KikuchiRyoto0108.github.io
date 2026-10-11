@@ -433,6 +433,20 @@ body {
   color: white;
 }
 
+.x-link .link-icon {
+  background-color: #000000;
+  color: white;
+}
+
+.mail-link .link-icon {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.link-url {
+  overflow-wrap: break-word;
+}
+
 .link-info {
   flex: 1;
 }
