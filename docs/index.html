@@ -114,9 +114,9 @@
         <!-- 実績サマリー -->
         <div class="hero-stats">
           <div class="stat-tile">
-            <span class="stat-number">9</span>
+            <span class="stat-number">8</span>
             <span class="stat-label">開発作品数</span>
-            <span class="stat-note">個人開発 3・チーム開発 6</span>
+            <span class="stat-note">個人開発 2・チーム開発 6</span>
           </div>
           <div class="stat-tile">
             <span class="stat-number">309<small>名</small></span>
@@ -266,6 +266,7 @@
           <i class="fas fa-gamepad"></i>
           Works
         </h2>
+        <div class="ai-scale"><h3 class="ai-scale-title"><i class="fas fa-robot"></i> AI利用度の見方</h3><p class="ai-scale-note">各作品で、自分が担当した部分にAIをどのくらい使ったかの目安です。設計・仕様・調整・動作確認は、どの作品でも自分で行っています。</p><ul class="ai-scale-list"><li><span class="ai-meter-bar lv1" aria-hidden="true"><i></i><i></i><i></i></span><b>AIなし</b>AIを使わずに自分で書いた</li><li><span class="ai-meter-bar lv2" aria-hidden="true"><i></i><i></i><i></i></span><b>AIチャットを先生に</b>質問・相談をして、示されたコードを参考に自分で実装した</li><li><span class="ai-meter-bar lv3" aria-hidden="true"><i></i><i></i><i></i></span><b>AIエージェントをフル活用</b>仕様を指示して、エージェント(Claude Code・Codexなど)にコードを書かせた</li></ul></div>
         
         <!-- 個人開発 -->
         <h3 class="subsection-title">個人開発</h3>
@@ -273,7 +274,7 @@
           <!-- Action3D -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">Action3D</h4>
+              <div class="work-title-wrap"><h4 class="work-title">Action3D</h4><div class="ai-meter" data-level="3" role="img" aria-label="AI利用度: AIエージェントをフル活用して開発" title="AI利用度: AIエージェントをフル活用して開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIエージェントをフル活用</span></div></div>
               <div class="work-badges">
                 <span class="work-badge">個人開発</span>
               </div>
@@ -283,8 +284,8 @@
               期間：2026/6 ~ 開発中<br>
               制作目的：DirectX11で最高に楽しい3Dアクションゲームを作る<br>
               開発環境：Visual Studio 2022, DirectX11, C++, HLSL<br>
-              使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, X3DAudio立体音響, 独自アセットベイクシステム<br>
-              実測：起動時間を計測ベースで最適化し 約1.86秒→約1.25秒に短縮<br>
+              使用技術：cgltf(GLB読み込み), AssetManager, X-Macro, OBB衝突判定, 三角形メッシュ+BVH, 区画グリッド, X3DAudio立体音響, 独自アセットベイクシステム<br>
+              実測：起動時間を計測ベースで最適化し 約1.86秒→約1.25秒に短縮 / 衝突判定を区画グリッドで絞り込み 30FPS→60FPSに改善<br>
               内容：3Dアクションゲーム<br>
               役割：フレームワーク設計・プログラム全般
             </p>
@@ -361,6 +362,19 @@
 
                 <div class="detail-section">
                   <h5 class="detail-title">
+                    <i class="fas fa-gamepad"></i>
+                    ゲームの内容
+                  </h5>
+                  <ul class="detail-list">
+                    <li>序章(最初の約10分)は、部隊の一員として剣だけで戦い、戦況悪化で瀕死になった末に覚醒して触手(虚装)を使えるようになり、ボスを倒して最初の市民を救出するまでの流れ。操作の案内は、実際にその操作をするまで次へ進まない</li>
+                    <li>序章のあとはビルが立ち並ぶ街を自由に動き回って戦うオープンワールド。交差点・公園・広場に敵の群れが置かれ、近づいた所だけ出現。群れは最初は気付いておらず、近づくか攻撃すると仲間も一斉に気付く。一定時間ごとに市民を襲う襲撃も起き、全滅させれば救出成功</li>
+                    <li>剣の弱・強攻撃、ロックオン、ジャスト回避に加え、触手の技6種(雷・一網打尽・急接近・串刺し・落雷・火球、装備は4枠)と、触手スイング・飛び移りによるビル間の移動</li>
+                    <li>敵は射撃・近接・迫撃の3役割にエリートとボス。全員が同時に襲ってこないよう、同時に攻撃できる数に上限(最大3体)を設けている</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
                     <i class="fas fa-wrench"></i>
                     アセット管理・フレームワーク設計
                   </h5>
@@ -368,7 +382,10 @@
                     <li>モデル形式はGLBを採用。メッシュ・スケルトン等が1ファイルにまとまりアセット管理がシンプルなうえ、バイナリとJSONが分離されているためパース後すぐGPUバッファへコピーでき、業界標準でもある点を重視</li>
                     <li>glTFパーサはcgltfを採用。軽量・シングルヘッダで導入コストが低く、glTF仕様に忠実な構造でライブラリの内部挙動に依存せず実装できる点、Assimp等の多形式ライブラリと比べ依存を最小化できる点が決め手</li>
                     <li>AssetManagerを導入し、pngとhdrで分岐してHDR環境マップにも対応。ロード時間を約40〜50%短縮</li>
-                    <li>アセット追加をenumと配列のインデックス同期に頼らず1か所の変更だけで反映できるよう、X-Macroを導入してバグの可能性を排除</li>
+                    <li>アセット追加をenumと配列のインデックス同期に頼らず1か所の変更だけで反映できるよう、X-Macroを導入してバグの可能性を排除。TEXTURE(ID, パス)を1行書くだけで、enumとパス配列を同じリストから生成</li>
+                    <li>GLBはベイク時にパースして独自の.mdl形式へ変換。頂点・ボーン・アニメーションのキーを「GPUへコピーするだけ」の形に事前変換し、ランタイムのcgltfパースを不要にした。テクスチャはBC7/BC5で圧縮し、最大辺は2048pxに縮小(PNG/HDRはミップ付きDDSへ)</li>
+                    <li>ベイクを再実行するかは、pakのフォーマット版数とソースの更新時刻で判定。ベイク処理を変えたら版数を上げるだけで次回起動時に自動で作り直される。書き込み中のpakの先頭は"PAK?"にし、完成時に"PACK"へ書き換えることで、途中で落ちても壊れたpakを読み込まない</li>
+                    <li>複数リグ入りのGLBでも正しく動くよう、アニメーション対象の関節が最も多いリグを選ぶ処理をメッシュ・骨・アニメ・ベイクで共通化し、Mixamo系とアバター系のボーン名の違いも名前の解決だけで吸収</li>
                     <li>シェーダーを毎回csoから個別ロードしていたのをshader_libraryに一元化し、起動時にまとめて読み込むことでロード時間を短縮</li>
                   </ul>
                 </div>
@@ -381,8 +398,12 @@
                   <ul class="detail-list">
                     <li>初期はManagerに衝突判定ロジックが混在していたが、Physics_Worldを新設して分離。距離判定・地面判定をここに集約し、将来的なレイキャスト等の拡張余地も確保</li>
                     <li>LayerMaskはUnityのPhysics Layer Matrixと同様の設計を採用。GameObjectは自分のレイヤーを1つ持つだけで、衝突ルールはPhysicsWorldが持つLayer×Layerの2次元bool配列で管理し、ゲームロジックから独立させた</li>
-                    <li>剣の当たり判定にはAABBでは表現しづらい形状のためOBBを導入。球との判定はローカル座標系に変換することでAABB vs Sphereに帰着させて実装。それ以外の空間分割等はYAGNIの原則で見送り、必要になった際に実測データと共に導入する方針</li>
+                    <li>剣の当たり判定にはAABBでは表現しづらい形状のためOBBを導入。球との判定はローカル座標系に変換することでAABB vs Sphereに帰着させて実装</li>
                     <li>Collisionの押し戻し判定もPhysics_Worldに集約し、レイヤーごとに動く/動かないを設定することで無駄な処理を排除</li>
+                    <li>ビルを箱1つで囲むと屋上の設備の上に何もない足場ができるため、実際の面で判定する三角形メッシュのコライダーを導入。三角形はBVH(最長軸の中央値分割)に格納し、判定する形の箱と重なるノードだけを辿る。球・カプセル・箱・OBBのどれも、最も深くめり込んだ面を返す</li>
+                    <li>それまでは全コライダーの総当たりで足りていたが、メッシュ導入で1組あたりの判定が重くなり、30FPSまで低下。判定をブロードフェーズ(候補の絞り込み)とナローフェーズ(正確な判定)に分け、動くものが絡む組だけに限定、静的物は32mの区画グリッドに登録して動くものの囲む箱が重なる区画だけを取得、さらに箱どうしが重なる組だけをナローフェーズへ渡す構成にして<b>30FPS→60FPSに改善</b>(開発機での確認)</li>
+                    <li>触手スイング等の高速移動でビルの壁をすり抜けないよう、体を上下2つの球で近似して進行方向を掃引し、面の手前で止めて面に沿って滑らせる処理を実装。始点がすでに箱の内側にある場合は「面へさらに入る向きの時だけ」当たりにして誤判定を防止</li>
+                    <li>ボスに2つのコライダーを持たせた際、同一GameObject内のコライダー同士が衝突して天高く飛ぶ不具合が発生。判定ペアの先頭で同一GameObjectを除外して解消</li>
                   </ul>
                 </div>
 
@@ -394,7 +415,23 @@
                   <ul class="detail-list">
                     <li>起動時間短縮のためアセットベイクシステムを自作。カスタムバイナリ(.pak)に30個以上のアセットを1ファイルへ統合し、MP3は事前にPCMデコードして格納。音声ロードを734ms→37msに短縮し、起動時間全体を約36%削減</li>
                     <li>VFS抽象化によりDebugビルドは生ファイル、Releaseビルドは.pakを参照するよう切り替え可能。ソース更新時のみ再ベイクする差分ベイク機能も実装</li>
+                    <li>ミップマップ生成をCPU(DirectXTex)からGPU(GenerateMips)へ移行。Debugビルドの実測で、地面テクスチャ(2880×2880)の生成が約1,237ms→約12ms、起動全体が約12.7秒→約3.4秒に短縮(未対応フォーマットのみCPU版へフォールバック)</li>
                     <li>立体音響はX3DAudio(XAudio2)で実装。ステレオ→モノラル変換をRelease時のアセットベイクに組み込み、ロード時間短縮と設計上の正しさを両立</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    ゲーム側の設計・手触り
+                  </h5>
+                  <ul class="detail-list">
+                    <li>プレイヤーの状態をStateパターンで実装。状態ごとにEnter/Update/Exitと「どの行動へ・何秒後から移れるか」のキャンセル受付時間を1クラスにまとめ、状態変更はChangeだけを通す。攻撃が命中した時だけ早く繋げられる仕様と、0.26秒の先行入力バッファで手触りを調整</li>
+                    <li>回避の無敵を出だしの0.35秒に限定し、その間に被弾したらジャスト回避とする設計。TakeDamageに届いた時点で「本当に当たっていた」ことが保証されるため、判定の先読みが不要。成功時は反撃猶予・与ダメージ3倍・スローを付与</li>
+                    <li>技はISkillインターフェース(Strategy)で実装し、生成はSkillFactoryに集約。SkillControllerが入力スロットを装備中の技に解決して振り分けるため、技を足してもPlayer本体を触らない</li>
+                    <li>敵の攻撃を「予告→発生→追撃」の時間軸データ(EnemyAttackPlan)にして、EnemyAttackClockが進行を管理。大きなdt(処理落ち)でも発生を取りこぼさず二重にも出さず、予告表示と判定が同じ時計で動く。突進は動いた区間を球で掃引して判定</li>
+                    <li>髪・コート・リボンはボーン名の接頭辞(Hair_/Coat_等)に合うものを検出して、Verlet積分の鎖として物理で揺らす。拘束は布のつながり→体との当たり→元の形から離れすぎない→骨の長さの順</li>
+                    <li>敵の攻撃時間軸・三角形メッシュのBVH・HPなどのロジックは、描画に依存しないヘッダに切り出し、ゲームを起動せずに確かめるコンソールのテストを作成</li>
                   </ul>
                 </div>
 
@@ -423,7 +460,7 @@
           <!-- PARALLEL WORLD -->
           <article class="work-card featured">
             <div class="work-header">
-              <h4 class="work-title">PARALLEL WORLD</h4>
+              <div class="work-title-wrap"><h4 class="work-title">PARALLEL WORLD</h4><div class="ai-meter" data-level="1" role="img" aria-label="AI利用度: AIを使わずに開発" title="AI利用度: AIを使わずに開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIなし</span></div></div>
               <div class="work-badges">
                 <span class="work-badge award">HEW銀賞受賞</span>
                 <span class="work-badge">個人開発</span>
@@ -543,127 +580,6 @@
             </div>
           </div>
 
-          <!-- 流体デモ -->
-          <article class="work-card">
-            <div class="work-header">
-              <h4 class="work-title">流体デモ</h4>
-              <div class="work-badges">
-                <span class="work-badge">個人開発</span>
-              </div>
-            </div>
-            <img src="assets/images/fluid_demo/fluid_demo.png" alt="流体デモ画像">
-            <p class="work-description">
-              期間：2026/2 ~ 2026/4 (3ヵ月)<br>
-              制作目的：自力で流体を表現する<br>
-              開発環境：DirectX11, C++, HLSL<br>
-              使用技術：SPH流体シミュレーション, スクリーンスペース流体レンダリング<br>
-              内容：流体デモ<br>
-              役割：プログラム
-            </p>
-            <div class="work-tech">
-              <span class="tech-tag">DirectX</span>
-              <span class="tech-tag">C++</span>
-            </div>
-
-            <!-- ボタンエリア -->
-            <div class="work-links">
-              <button class="work-link detail-btn" data-target="detail-fluid-demonstration">
-                詳細を表示
-              </button>
-              <a href="https://youtu.be/Zm5Kx3k6fJo" target="_blank" rel="noopener noreferrer" class="work-link primary youtube">
-                <i class="fab fa-youtube"></i>
-                View Video
-              </a>
-              <a href="https://github.com/kikuchiryoto0108/fluid_demo" target="_blank" rel="noopener noreferrer" class="work-link primary">
-                <i class="fab fa-github"></i>
-                View Repository
-              </a>
-            </div>
-          </article>
-
-          <!-- モーダル: 流体デモ -->
-          <div class="modal-overlay" id="detail-fluid-demonstration">
-            <div class="modal-window">
-              <div class="modal-header">
-                <h4 class="modal-title">流体デモ</h4>
-                <button class="modal-close" aria-label="閉じる">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- スライダー -->
-                <div class="modal-slider">
-                  <div class="slider-track">
-                    <!-- スライド1: 動画 -->
-                    <div class="slider-slide active">
-                      <div class="slide-video">
-                        <iframe
-                          src="https://www.youtube.com/embed/Zm5Kx3k6fJo"
-                          title="流体デモ動画"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                    <!-- スライド2: 画像 -->
-                    <div class="slider-slide">
-                      <img src="assets/images/fluid_demo/fluid1.png" alt="流体デモ画像">
-                    </div>
-                    <div class="slider-slide">
-                      <img src="assets/images/fluid_demo/fluid2.png" alt="流体デモ画像">
-                    </div>
-                    <div class="slider-slide">
-                      <img src="assets/images/fluid_demo/fluid3.png" alt="流体デモ画像">
-                    </div>
-                  </div>
-                  <button class="slider-btn slider-prev" aria-label="前へ">
-                    <i class="fas fa-chevron-left"></i>
-                  </button>
-                  <button class="slider-btn slider-next" aria-label="次へ">
-                    <i class="fas fa-chevron-right"></i>
-                  </button>
-                  <div class="slider-dots"></div>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-info-circle"></i>
-                    作品概要
-                  </h5>
-                  <p class="detail-text">
-                    流体を表現してみたいと思い、<br>
-                    CPU側でSPH法によるパーティクルベースの流体シミュレーションを行い、<br>
-                    GPU側でスクリーンスペース流体レンダリングにより滑らかな水面を描画するシステムを用いました。<br>
-                    SPH法では各パーティクル間の圧力・粘性・凝集力を計算し、重力と壁への衝突を含めた物理挙動を実現<br>
-                    描画は深度パス→バイラテラルブラー→厚みパス→最終合成の多パス構成で、パーティクルの粒々感を消して液体らしい表面を再構成<br>
-                    最終合成ではブラー済み深度から法線を復元し、フレネル反射・スペキュラ・厚みに応じた色の補間で水の質感を表現<br>
-                    レンダリング技術からシェーダーまで、このデモを通して大きく成長できました。
-                  </p>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-wrench"></i>
-                    工夫した点
-                  </h5>
-                  <ul class="detail-list">
-                    <li>深度パスにMINブレンドを採用し、描画順に依存しない正確な水面最前面の深度の取得</li>
-                    <li>バイラテラルブラーを4パス適用することで、水面内部はなめらかにつなげつつシルエットはシャープに保ち、粒々感のない連続的な水面を実現</li>
-                    <li>レンダリングステートの完全保存・復帰とGPU資源の遅延初期化により、既存のパイプラインに影響を与えずに後付けで流体描画を統合できる設計</li>
-                  </ul>
-                </div>
-
-                <div class="detail-section">
-                  <h5 class="detail-title">
-                    <i class="fas fa-calendar-alt"></i>
-                    制作期間・規模
-                  </h5>
-                  <p class="detail-text">約2ヶ月間の個人開発プロジェクト</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- チーム開発 -->
@@ -673,7 +589,7 @@
           <!-- 荒魂 -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">荒魂</h4>
+              <div class="work-title-wrap"><h4 class="work-title">荒魂</h4><div class="ai-meter" data-level="2" role="img" aria-label="AI利用度: AIチャットを先生にして開発" title="AI利用度: AIチャットを先生にして開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIチャットを先生に</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>
@@ -831,7 +747,7 @@
           <!-- 通称ツーショ -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">通称ツーショ</h4>
+              <div class="work-title-wrap"><h4 class="work-title">通称ツーショ</h4><div class="ai-meter" data-level="1" role="img" aria-label="AI利用度: AIを使わずに開発" title="AI利用度: AIを使わずに開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIなし</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>
@@ -914,7 +830,7 @@
           <!-- NeoZip -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">NeoZip</h4>
+              <div class="work-title-wrap"><h4 class="work-title">NeoZip</h4><div class="ai-meter" data-level="2" role="img" aria-label="AI利用度: AIチャットを先生にして開発" title="AI利用度: AIチャットを先生にして開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIチャットを先生に</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>
@@ -1032,7 +948,7 @@
           <!-- まともな一日(NADONIEZU) -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">まともな一日</h4>
+              <div class="work-title-wrap"><h4 class="work-title">まともな一日</h4><div class="ai-meter" data-level="2.5" role="img" aria-label="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発" title="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIチャット〜エージェント(半々)</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>
@@ -1143,7 +1059,7 @@
           <!-- 浸水限界(hora-) -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">浸水限界</h4>
+              <div class="work-title-wrap"><h4 class="work-title">浸水限界</h4><div class="ai-meter" data-level="2.5" role="img" aria-label="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発" title="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIチャット〜エージェント(半々)</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>
@@ -1258,7 +1174,7 @@
           <!-- lilial. -->
           <article class="work-card">
             <div class="work-header">
-              <h4 class="work-title">lilial.</h4>
+              <div class="work-title-wrap"><h4 class="work-title">lilial.</h4><div class="ai-meter" data-level="2.5" role="img" aria-label="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発" title="AI利用度: AIチャットとAIエージェントを半分ずつ使って開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIチャット〜エージェント(半々)</span></div></div>
               <div class="work-badges">
                 <span class="work-badge team">チーム開発</span>
               </div>

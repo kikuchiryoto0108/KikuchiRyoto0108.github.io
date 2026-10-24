@@ -1141,3 +1141,117 @@ body.modal-open {
   color: var(--text-light);
   font-size: 0.9rem;
 }
+
+
+/* ---- AI利用度メーター ---- */
+.work-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.ai-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+
+.ai-meter-title {
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
+.ai-meter-bar {
+  display: inline-flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.ai-meter-bar i {
+  display: block;
+  width: 22px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--border-color);
+}
+
+.ai-meter-text {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* 段階ごとに色と点灯数を変える(色だけに頼らず、点灯数と文字でも読み取れる) */
+.ai-meter[data-level="1"] .ai-meter-bar i:nth-child(1),
+.ai-meter-bar.lv1 i:nth-child(1) { background-color: #9ca3af; }
+
+.ai-meter[data-level="2"] .ai-meter-bar i:nth-child(-n+2),
+.ai-meter-bar.lv2 i:nth-child(-n+2) { background-color: var(--accent-color); }
+
+.ai-meter[data-level="2.5"] .ai-meter-bar i:nth-child(-n+2) { background-color: var(--accent-color); }
+.ai-meter[data-level="2.5"] .ai-meter-bar i:nth-child(3) {
+  background-image: linear-gradient(90deg, #ea580c 50%, var(--border-color) 50%);
+  background-color: transparent;
+}
+
+.ai-meter[data-level="3"] .ai-meter-bar i,
+.ai-meter-bar.lv3 i { background-color: #ea580c; }
+
+/* 凡例 */
+.ai-scale {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.ai-scale-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.ai-scale-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.ai-scale-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-scale-list li {
+  display: grid;
+  grid-template-columns: 76px auto 1fr;
+  align-items: baseline;
+  gap: 0.2rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ai-scale-list b {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.ai-scale-list .ai-meter-bar { align-self: center; }
+
+@media (max-width: 640px) {
+  .ai-scale-list li { grid-template-columns: 76px 1fr; }
+  .ai-scale-list li b { grid-column: 2; }
+  .ai-scale-list li { grid-auto-flow: row; }
+}
