@@ -145,6 +145,9 @@ function initWorkDetails() {
       iframe.src = src;
     });
   
+    // モーダル内のmp4動画も止める
+    modal.querySelectorAll('video').forEach(v => v.pause());
+
     modal.classList.remove('is-open');
     document.body.classList.remove('modal-open');
   }
@@ -266,6 +269,9 @@ function initSliders() {
         currentIframe.src = '';
         currentIframe.src = src;
       }
+
+      // mp4の動画スライドから離れるときは一時停止する
+      slides[current].querySelectorAll('video').forEach(v => v.pause());
 
       slides[current].classList.remove('active');
       dots[current].classList.remove('active');

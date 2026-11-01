@@ -114,9 +114,9 @@
         <!-- 実績サマリー -->
         <div class="hero-stats">
           <div class="stat-tile">
-            <span class="stat-number">8</span>
+            <span class="stat-number">9</span>
             <span class="stat-label">開発作品数</span>
-            <span class="stat-note">個人開発 2・チーム開発 6</span>
+            <span class="stat-note">個人開発 2・チーム開発 7</span>
           </div>
           <div class="stat-tile">
             <span class="stat-number">309<small>名</small></span>
@@ -1292,6 +1292,160 @@
               </div>
             </div>
           </div>
+          <!-- 居合城攻め -->
+          <article class="work-card">
+            <div class="work-header">
+              <div class="work-title-wrap"><h4 class="work-title">居合城攻め</h4><div class="ai-meter" data-level="3" role="img" aria-label="AI利用度: AIエージェントをフル活用して開発" title="AI利用度: AIエージェントをフル活用して開発"><span class="ai-meter-title">AI利用度</span><span class="ai-meter-bar" aria-hidden="true"><i></i><i></i><i></i></span><span class="ai-meter-text">AIエージェントをフル活用</span></div></div>
+              <div class="work-badges">
+                <span class="work-badge team">チーム開発</span>
+              </div>
+            </div>
+            <video src="assets/images/iaijo/Thumbnail.mp4" poster="assets/images/iaijo/poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="居合城攻めのプレイ映像"></video>
+            <p class="work-description">
+              期間：2026/10/19 ~ 2026/10/30 (2週間・CyberAgentインターン)<br>
+              制作目的：インターンのゲームジャムで、お題「進む」の企画を形にして発表する<br>
+              チーム人数：プログラマー5人<br>
+              開発環境：Unity 6000.6, URP(2D), C#, Input System<br>
+              使用技術：ScriptableObjectによるconfig設計, ヒットストップ/スロー/カメラ演出, AIエージェントによる実装<br>
+              内容：見下ろし2Dの居合アクションゲーム(溜めて離すと、斬りながら前へ進む)<br>
+              役割：チームリーダー・ボス/演出/チュートリアル/タイトルUI・config設計・最終発表
+            </p>
+            <div class="work-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+            </div>
+
+            <!-- ボタンエリア -->
+            <div class="work-links">
+              <button class="work-link detail-btn" data-target="detail-iaijo">
+                詳細を表示
+              </button>
+            </div>
+          </article>
+
+          <!-- モーダル: 居合城攻め -->
+          <div class="modal-overlay" id="detail-iaijo">
+            <div class="modal-window">
+              <div class="modal-header">
+                <h4 class="modal-title">居合城攻め</h4>
+                <button class="modal-close" aria-label="閉じる">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- スライダー -->
+                <div class="modal-slider">
+                  <div class="slider-track">
+                    <div class="slider-slide active">
+                      <div class="slide-video">
+                        <video src="assets/images/iaijo/play.mp4" poster="assets/images/iaijo/poster.jpg" controls playsinline preload="metadata" aria-label="プレイ映像"></video>
+                        <span class="slide-caption">プレイ映像</span>
+                      </div>
+                    </div>
+                    <div class="slider-slide">
+                      <div class="slide-video">
+                        <video src="assets/images/iaijo/slash.mp4" controls playsinline preload="metadata" aria-label="斬って進む"></video>
+                        <span class="slide-caption">斬って進む</span>
+                      </div>
+                    </div>
+                    <div class="slider-slide">
+                      <div class="slide-video">
+                        <video src="assets/images/iaijo/charge.mp4" controls playsinline preload="metadata" aria-label="溜めと盾"></video>
+                        <span class="slide-caption">溜めと盾</span>
+                      </div>
+                    </div>
+                    <div class="slider-slide">
+                      <div class="slide-video">
+                        <video src="assets/images/iaijo/focus.mp4" controls playsinline preload="metadata" aria-label="集中タイム"></video>
+                        <span class="slide-caption">集中タイム</span>
+                      </div>
+                    </div>
+                    <div class="slider-slide">
+                      <div class="slide-video">
+                        <video src="assets/images/iaijo/title-ui.mp4" controls playsinline preload="metadata" aria-label="タイトル・心得"></video>
+                        <span class="slide-caption">タイトル・心得</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="slider-btn slider-prev" aria-label="前へ">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="slider-btn slider-next" aria-label="次へ">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <div class="slider-dots"></div>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-info-circle"></i>
+                    作品概要
+                  </h5>
+                  <p class="detail-text">
+                    株式会社サイバーエージェントのインターンシップで、プログラマー5人・2週間のゲームジャムとして制作した、見下ろし2Dの居合アクションです。<br>
+                    お題は「進む」。「斬ることが、前へ進むこと」を企画の軸に、長押しで溜めて、離すと斬りながら駆け抜ける、というひとつの操作に攻撃と移動をまとめました。大手門から天守の殿を討つまで、フロアの敵を全滅させて門を開け、次のフロアへ進みます。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-lightbulb"></i>
+                    ゲームデザイン
+                  </h5>
+                  <ul class="detail-list">
+                    <li>引き算の設計: 操作は「長押しで溜める」「離して斬って進む」「回避」だけ。アイテム・武器の切り替え・育成は入れず、「どう溜めて、どの順で斬るか」の判断に集中できるようにした</li>
+                    <li>ゴール設計: 最終目標(天守の殿を討つ)・エリア目標(フロアの敵を全滅させて門を開く)・瞬間目標(敵の攻撃の予告を読んで先に斬る)の入れ子のループで、常に次の目標が見える</li>
+                    <li>溜めの駆け引き: 満タンまで溜めるとダメージ3倍で、まとめて斬れば体力が回復する。短く刻めば、倒すたびに次の溜めが速くなる。溜め中は鈍足で、外せば隙になる。盾持ちは正面の攻撃を弾くため、斬る順番が重要になる</li>
+                    <li>集中タイム: 5体斬ると5秒間、画面がモノクロになって敵の時間が止まり、盾も正面から貫通できる。「あと何体」が次の目標になる</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-wrench"></i>
+                    担当した部分
+                  </h5>
+                  <ul class="detail-list">
+                    <li>ボス: 殿と中ボス(侍大将)の追加、第二形態、登場演出、ボスによるザコ敵のランダム召喚。ボスの数値や盾の有無はconfigで調整できるように設計した</li>
+                    <li>演出: ヒットストップ、スロー、カメラシェイク、剣撃・溜め・撃破・回復のエフェクト。複数の敵を斬ったときのフラッシュや、盾に阻まれるときの予告線と警告も実装した</li>
+                    <li>進行: フロアごとの敵スポナー、リスポーン、次のフロアへの矢印、エンドレスモードのゲームループへの組み込み</li>
+                    <li>チュートリアル・UI: 基本・EX・極・盾のチュートリアル、操作ガイド、タイトルとリザルトのUI(ハンコの演出)、心得(ヘルプ)、回避ゲージ、進捗バー。「迷わせない画面」を目指して、UIの不親切な部分を一つずつ潰した</li>
+                    <li>軽量化: 心得(ヘルプ)の絵の枠で流すデモ動画を軽量化した</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-users"></i>
+                    チームリーダーとして
+                  </h5>
+                  <p class="detail-text">
+                    チームリーダーとしてチームをまとめ、最終発表も担当しました。発表では、企画の軸・引き算の設計・ゴール設計・集中タイム・UIの工夫を、実際のプレイ映像と一緒に伝えました。
+                  </p>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-robot"></i>
+                    AIの活用
+                  </h5>
+                  <ul class="detail-list">
+                    <li>コードの実装はすべてAIエージェントに任せ、自分は設計・仕様・調整・動作確認に集中する進め方を実践した。configの設計も自分で行った</li>
+                    <li>イラスト素材はほぼすべて(約99%)をAIで作り、ゲームの世界観に合うよう調整した。音声素材も約2割を制作した</li>
+                  </ul>
+                </div>
+
+                <div class="detail-section">
+                  <h5 class="detail-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    制作期間・規模
+                  </h5>
+                  <p class="detail-text">2026年10月19日〜30日(2週間)のチーム開発プロジェクト。プログラマー5人</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1351,6 +1505,21 @@
               出席確認や号令、配布物の伝達といった日々の運営に加え、資格取得に向けた勉強会をクラスで企画・開催。<br>
               先生とクラスをつなぐ窓口も担い、出席状況が思わしくない学生の相談に乗るなど、一人ひとりの事情に向き合う場面もありました。<br>
               3年間、学年やクラスの違う先生・学生と関わり続けたことで、初対面の相手ともすぐに打ち解けて話せるようになりました。
+            </p>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-header">
+              <div class="activity-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 class="activity-title">サイバーエージェント インターン - チームリーダー</h3>
+            </div>
+            <p class="activity-description">
+              2026年10月19日から30日までの2週間、株式会社サイバーエージェントのインターンシップに参加し、プログラマー5人のチームでゲームジャムに取り組みました。<br>
+              お題「進む」から、見下ろし2Dの居合アクション『居合城攻め』(Unity)を10日間で制作。チームリーダーとしてチームをまとめ、最終発表も担当しました。<br>
+              開発ではボス・演出・チュートリアル・タイトルUIを担当し、ゲームの数値を決めるconfigを設計。コードの実装はすべてAIエージェントに任せ、設計・仕様・調整・動作確認に集中する進め方を実践しました。<br>
+              イラスト素材はほぼすべてAIで作り、世界観が揃うよう調整しました(音声素材も一部制作)。
             </p>
           </article>
         </div>
