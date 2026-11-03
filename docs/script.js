@@ -1,18 +1,3 @@
-// DOM読み込み完了後に実行
-document.addEventListener('DOMContentLoaded', function() {
-  // ナビゲーションのアクティブ状態管理
-  initActiveNavigation();
-  
-  // スムーススクロール
-  initSmoothScroll();
-  
-  // カードのホバーエフェクト強化
-  initCardEffects();
-  
-  // Worksの詳細表示
-  initWorkDetails();
-});
-
 /**
  * ナビゲーションのアクティブ状態管理
  */
@@ -76,23 +61,6 @@ function initSmoothScroll() {
           behavior: 'smooth'
         });
       }
-    });
-  });
-}
-
-/**
- * カードのホバーエフェクト強化
- */
-function initCardEffects() {
-  const cards = document.querySelectorAll('.work-card, .activity-card, .link-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-4px)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(-2px)';
     });
   });
 }
@@ -183,7 +151,6 @@ function initWorkDetails() {
 document.addEventListener('DOMContentLoaded', function() {
   initActiveNavigation();
   initSmoothScroll();
-  initCardEffects();
   initWorkDetails();
   initSliders();       // ← 追加
   initScrollReveal();  // ← 追加
@@ -194,13 +161,12 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initScrollReveal() {
   const groups = [
-    document.querySelectorAll('.hero-stats .stat-tile'),
-    document.querySelectorAll('.section-title'),
-    document.querySelectorAll('.subsection-title'),
+    document.querySelectorAll('.stats .stat-tile'),
+    document.querySelectorAll('.sec-title'),
     document.querySelectorAll('#about .content-card'),
     document.querySelectorAll('.link-card'),
     document.querySelectorAll('.skill-category'),
-    document.querySelectorAll('.work-card'),
+    document.querySelectorAll('.game'),
     document.querySelectorAll('.activity-card'),
   ];
 
