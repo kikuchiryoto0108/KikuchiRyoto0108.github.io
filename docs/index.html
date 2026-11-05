@@ -81,11 +81,11 @@
       <a href="#top" class="logo">菊池凌斗</a>
       <nav class="nav" aria-label="ページ内メニュー">
         <ul class="nav-list">
-          <li><a href="#works" class="nav-link">Works</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#works" class="nav-link">Works</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#activities" class="nav-link">Activities</a></li>
-          <li><a href="#links" class="nav-link">Links</a></li>
+          <li><a href="#links" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -103,7 +103,7 @@
         <p class="hero-school">HAL東京4年制3年生 ゲーム学科ゲーム制作コース</p>
         <div class="hero-cta">
           <a href="#works" class="btn dark"><i class="fas fa-gamepad"></i>作ったゲームを見る</a>
-          <a href="https://github.com/kikuchiryoto0108" target="_blank" rel="noopener noreferrer" class="btn ghost"><i class="fab fa-github"></i>GitHub</a>
+          <a href="#about" class="btn ghost"><i class="fas fa-user"></i>自己紹介を読む</a>
         </div>
       </div>
       <div class="now" id="now" hidden>
@@ -118,22 +118,85 @@
 
     <!-- 実績サマリー -->
     <div class="stats">
-      <div class="stat-tile">
+      <a class="stat-tile" href="#works">
         <span class="stat-number">9</span>
         <span class="stat-label">開発作品数</span>
         <span class="stat-note">個人開発 2・チーム開発 7</span>
-      </div>
-      <div class="stat-tile">
+        <span class="stat-go">作品を見る</span>
+      </a>
+      <a class="stat-tile" href="#act-gakureku">
         <span class="stat-number">309<small>名</small></span>
         <span class="stat-label">運営スタッフを統括</span>
         <span class="stat-note">学内最大イベント(参加者3,500名)</span>
-      </div>
-      <div class="stat-tile">
-        <span class="stat-number">2</span>
-        <span class="stat-label">リーダー・PM経験</span>
+        <span class="stat-go">学レクの活動を見る</span>
+      </a>
+      <a class="stat-tile" href="#works" data-filter="leader">
+        <span class="stat-number">3</span>
+        <span class="stat-label">チームリーダーを担当した作品</span>
         <span class="stat-note">最大8人チームを牽引</span>
-      </div>
+        <span class="stat-go">リーダー作品を見る</span>
+      </a>
     </div>
+
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <h2 class="sec-title">About</h2>
+            <p class="sec-sub">自己紹介</p>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="profile-main content-card">
+            <p class="profile-catch">ゲーム全体を見渡しながら、<br>あとから直しやすい仕組みを作る<br>ゲームプログラマーです。</p>
+            <p class="about-text">
+              HAL東京 ゲーム4年制学科の3年生です。得意なのはゲームシステムの設計と実装で、ボスAI・当たり判定・入力システムなどを作ってきました。仕様どおりに動かすだけでなく、責務を分けて、あとから機能を足しやすく直しやすい設計を心がけています。<br>
+              チーム制作ではリーダーやPMを任されることが多く、企画・スケジュール管理・Gitの運用まで含めてチーム全体を見ながら、自分でも一番難しい部分のコードを書くようにしています。
+            </p>
+            <dl class="profile-facts">
+              <dt>所属</dt><dd>HAL東京 ゲーム4年制学科 3年(2024年入学)</dd>
+              <dt>得意</dt><dd>ゲームシステムの設計・実装(ボスAI・当たり判定・入力システム)</dd>
+              <dt>強み</dt><dd>全体を俯瞰して、課題と優先順位を整理すること</dd>
+              <dt>趣味</dt><dd>ゲーム制作・音楽鑑賞</dd>
+            </dl>
+          </div>
+
+          <div class="awards content-card">
+            <h3 class="awards-title"><i class="fas fa-trophy"></i>受賞・資格</h3>
+            <ol class="awards-list">
+              <li><time>2025.03</time><span>進級制作展(HAL EVENT WEEK) 銀賞<a href="#w-parallel" class="awards-link">PARALLEL WORLD</a></span></li>
+              <li><time>2025.03</time><span>HAL3校合同 オリジナルTPS学内コンペ 技術力賞</span></li>
+              <li><time>2025.03</time><span>HAL東京 1ヵ年皆勤賞</span></li>
+              <li><time>2024.10</time><span>HAL3校合同 おもしろゲームづくり学内コンテスト 技術力賞</span></li>
+              <li><time>2024.08</time><span>基本情報技術者試験 合格</span></li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="points-title">こんなところを見てほしい</h3>
+        <div class="points">
+          <div class="point">
+            <span class="point-no">01</span>
+            <h4 class="point-head">あとから足せる設計</h4>
+            <p>2Dアクション『荒魂』のボスAIは、責務を分けて設計したことで、後から攻撃パターンを追加するときも大きな修正なしで対応できました。</p>
+            <a href="#w-aratama" class="point-link">荒魂を見る</a>
+          </div>
+          <div class="point">
+            <span class="point-no">02</span>
+            <h4 class="point-head">チームを引っぱる</h4>
+            <p>『浸水限界』『lilial.』『居合城攻め』でチームリーダーを担当。学内最大のイベントでは309名の運営スタッフを統括しました。</p>
+            <a href="#works" data-filter="leader" class="point-link">リーダー作品を見る</a>
+          </div>
+          <div class="point">
+            <span class="point-no">03</span>
+            <h4 class="point-head">仕組みから自分で作る</h4>
+            <p>DirectX11ではフレームワークから自作して3Dアクションを制作。厄介なバグも、原因が分かるまで追いかけます。</p>
+            <a href="#w-action3d" class="point-link">Action3Dを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="works" class="section">
       <div class="wrap">
@@ -155,6 +218,7 @@
             <button class="filter is-on" data-f="all" aria-pressed="true">すべて<span>9</span></button>
             <button class="filter" data-f="solo" aria-pressed="false">個人開発<span>2</span></button>
             <button class="filter" data-f="team" aria-pressed="false">チーム開発<span>7</span></button>
+            <button class="filter" data-f="leader" aria-pressed="false">リーダー<span>3</span></button>
           </div>
         </div>
         <div class="shelf">
@@ -465,12 +529,12 @@
             </div>
           </div>
           <!-- lilial. -->
-          <article class="game" id="w-lilial" data-kind="team" style="--c: #f28b82" data-title="lilial." data-genre="着せ替えゲーム" data-poster="assets/images/dressup/kisekaeGamen.png">
+          <article class="game" data-leader="true" id="w-lilial" data-kind="team" style="--c: #f28b82" data-title="lilial." data-genre="着せ替えゲーム" data-poster="assets/images/dressup/kisekaeGamen.png">
             <div class="media">
               <img src="assets/images/dressup/kisekaeGamen.png" alt="lilial.画像" loading="lazy" class="contain">
             </div>
             <div class="info">
-              <div class="kind"><span>チーム開発</span></div>
+              <div class="kind"><span>チーム開発</span><span class="k-leader">リーダー</span></div>
               <h3 class="game-title">lilial.</h3>
               <p class="genre">着せ替えゲーム</p>
               <dl class="facts">
@@ -592,12 +656,12 @@
             </div>
           </div>
           <!-- 浸水限界 -->
-          <article class="game wide" id="w-hora" data-kind="team" style="--c: #2f9fb3" data-title="浸水限界" data-genre="浸水した潜水艦から脱出する探索型ホラーゲーム" data-poster="assets/images/hora/title.png">
+          <article class="game wide" data-leader="true" id="w-hora" data-kind="team" style="--c: #2f9fb3" data-title="浸水限界" data-genre="浸水した潜水艦から脱出する探索型ホラーゲーム" data-poster="assets/images/hora/title.png">
             <div class="media">
               <img src="assets/images/hora/title.png" alt="浸水限界画像" loading="lazy">
             </div>
             <div class="info">
-              <div class="kind"><span>チーム開発</span></div>
+              <div class="kind"><span>チーム開発</span><span class="k-leader">リーダー</span></div>
               <h3 class="game-title">浸水限界</h3>
               <p class="genre">浸水した潜水艦から脱出する探索型ホラーゲーム</p>
               <dl class="facts">
@@ -985,7 +1049,7 @@
             </div>
           </div>
           <!-- 居合城攻め -->
-          <article class="game wide" id="w-iaijo" data-kind="team" style="--c: #e0483c" data-title="居合城攻め" data-genre="見下ろし2Dの居合アクションゲーム(溜めて離すと、斬りながら前へ進む)" data-poster="assets/images/iaijo/poster.jpg" data-video="assets/images/iaijo/Thumbnail.mp4">
+          <article class="game wide" data-leader="true" id="w-iaijo" data-kind="team" style="--c: #e0483c" data-title="居合城攻め" data-genre="見下ろし2Dの居合アクションゲーム(溜めて離すと、斬りながら前へ進む)" data-poster="assets/images/iaijo/poster.jpg" data-video="assets/images/iaijo/Thumbnail.mp4">
             <div class="media">
               <img src="assets/images/iaijo/poster.jpg" alt="居合城攻め" loading="lazy">
               <video data-src="assets/images/iaijo/Thumbnail.mp4" muted loop playsinline preload="none" aria-label="居合城攻めのプレイ映像"></video>
@@ -993,7 +1057,7 @@
               <span class="ribbon">CyberAgent インターン</span>
             </div>
             <div class="info">
-              <div class="kind"><span>チーム開発</span></div>
+              <div class="kind"><span>チーム開発</span><span class="k-leader">リーダー</span></div>
               <h3 class="game-title">居合城攻め</h3>
               <p class="genre">見下ろし2Dの居合アクションゲーム(溜めて離すと、斬りながら前へ進む)</p>
               <dl class="facts">
@@ -1364,25 +1428,6 @@
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="wrap">
-        <div class="sec-head">
-          <div>
-            <h2 class="sec-title">About</h2>
-            <p class="sec-sub">自己紹介</p>
-          </div>
-        </div>
-        <div class="content-card">
-          <p class="about-text">
-            ゲーム開発を専門とするプログラマーです。<br>
-            DirectX11では衝突判定・ボスAI・オーディオエンジンまで一から自作し、Unityではセーブ設計や物理まわりの地味だけど厄介なバグを、原因が分かるまで追いかけるタイプです。<br>
-            チーム開発では毎回リーダー・PMを任されることが多く、企画からスケジュール管理、Gitの運用まで含めてチーム全体を見渡しながら、自分自身でも一番難しい部分のコードを書くようにしています。<br>
-            学内コンテストでの受賞経験もあり、「面白い」を形にするための技術研鑽を日々続けています。<br>
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section id="skills" class="section">
       <div class="wrap">
         <div class="sec-head">
@@ -1443,7 +1488,8 @@
             <h3 class="skill-category-title">資格・実績</h3>
             <div class="qualification-tags">
               <span class="qualification-tag"><i class="fas fa-certificate"></i>基本情報技術者</span>
-              <span class="qualification-tag award"><i class="fas fa-trophy"></i>HEW(学内コンテスト) 一年次銀賞</span>
+              <span class="qualification-tag award"><i class="fas fa-trophy"></i>進級制作展(HEW) 銀賞</span>
+              <span class="qualification-tag award"><i class="fas fa-trophy"></i>学内コンテスト 技術力賞 ×2</span>
             </div>
           </div>
         </div>
@@ -1460,12 +1506,12 @@
         </div>
         <div class="activities-list">
 
-          <article class="activity-card">
+          <article class="activity-card" id="act-gakureku">
             <div class="activity-header">
               <div class="activity-icon">
                 <i class="fas fa-users"></i>
               </div>
-              <h3 class="activity-title">学生レ・クリエーション - 統括</h3>
+              <div class="activity-heading"><h3 class="activity-title">学生レ・クリエーション - 統括</h3><span class="k-leader">リーダー</span></div>
             </div>
             <img src="assets/images/学レク/学レク.jpg" alt="学レク俺の画像">
             <p class="activity-description">
@@ -1477,12 +1523,12 @@
             </p>
           </article>
 
-          <article class="activity-card">
+          <article class="activity-card" id="act-assistant">
             <div class="activity-header">
               <div class="activity-icon">
                 <i class="fas fa-chalkboard-teacher"></i>
               </div>
-              <h3 class="activity-title">アシスタントスタッフ活動</h3>
+              <div class="activity-heading"><h3 class="activity-title">アシスタントスタッフ活動</h3><span class="k-leader">リーダー</span></div>
             </div>
             <p class="activity-description">
               学内のアシスタントスタッフとして2年間活動し、体験入学の運営サポートを中心に担当しました。<br>
@@ -1493,12 +1539,12 @@
             </p>
           </article>
 
-          <article class="activity-card">
+          <article class="activity-card" id="act-class">
             <div class="activity-header">
               <div class="activity-icon">
                 <i class="fas fa-user-tie"></i>
               </div>
-              <h3 class="activity-title">クラス委員長 - 3年連続</h3>
+              <div class="activity-heading"><h3 class="activity-title">クラス委員長 - 3年連続</h3><span class="k-leader">リーダー</span></div>
             </div>
             <p class="activity-description">
               約40名のクラスで、1年次から3年次まで3年連続してクラス委員長を務めました。<br>
@@ -1508,12 +1554,12 @@
             </p>
           </article>
 
-          <article class="activity-card">
+          <article class="activity-card" id="act-cyberagent">
             <div class="activity-header">
               <div class="activity-icon">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <h3 class="activity-title">サイバーエージェント インターン - チームリーダー</h3>
+              <div class="activity-heading"><h3 class="activity-title">サイバーエージェント インターン - チームリーダー</h3><span class="k-leader">リーダー</span></div>
             </div>
             <p class="activity-description">
               2026年10月19日から30日までの2週間、株式会社サイバーエージェントのインターンシップに参加し、プログラマー5人のチームでゲームジャムに取り組みました。<br>
@@ -1530,8 +1576,8 @@
       <div class="wrap">
         <div class="sec-head">
           <div>
-            <h2 class="sec-title">Links</h2>
-            <p class="sec-sub">連絡先・SNS</p>
+            <h2 class="sec-title">Contact</h2>
+            <p class="sec-sub">お気軽にご連絡ください。作品のソースは GitHub で公開しています。</p>
           </div>
         </div>
         <div class="links-grid">

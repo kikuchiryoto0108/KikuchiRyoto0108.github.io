@@ -125,15 +125,40 @@ document.addEventListener('DOMContentLoaded', () => {
   function initFilters() {
     const shelf = document.querySelector('.shelf');
     const filters = document.querySelectorAll('.filter');
-    filters.forEach(btn => btn.addEventListener('click', () => {
-      const kind = btn.dataset.f;
+
+    function matches(card, kind) {
+      if (kind === 'all') return true;
+      if (kind === 'leader') return card.dataset.leader === 'true';
+      return card.dataset.kind === kind;
+    }
+
+    function applyFilter(kind) {
       filters.forEach(b => {
-        b.classList.toggle('is-on', b === btn);
-        b.setAttribute('aria-pressed', String(b === btn));
+        b.classList.toggle('is-on', b.dataset.f === kind);
+        b.setAttribute('aria-pressed', String(b.dataset.f === kind));
       });
       shelf.classList.toggle('is-filtered', kind !== 'all');
-      cards.forEach(card => card.classList.toggle('is-hidden', kind !== 'all' && card.dataset.kind !== kind));
-    }));
+      cards.forEach(card => card.classList.toggle('is-hidden', !matches(card, kind)));
+    }
+
+    filters.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.f)));
+
+    // ページ内リンク: スクロール(script.js)より先に、絞り込みと飛び先の準備をする
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      if (link.dataset.filter) {
+        applyFilter(link.dataset.filter);
+        return;
+      }
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target || !target.matches('.game, .activity-card')) return;
+      if (target.classList.contains('is-hidden')) applyFilter('all');
+      // 着いた先を一瞬光らせて、どこを見ればいいか分かるようにする
+      target.classList.remove('is-target');
+      setTimeout(() => target.classList.add('is-target'), 450);
+      setTimeout(() => target.classList.remove('is-target'), 2200);
+    }, true);
   }
 
   // ---- ヘッダー ----

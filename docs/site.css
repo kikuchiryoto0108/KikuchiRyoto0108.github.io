@@ -225,6 +225,54 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .content-card { padding: 28px 32px; }
 .about-text { font-size: 1rem; line-height: 2; }
 
+/* 自己紹介: 本文+プロフィール | 受賞・資格 */
+.profile { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.profile-catch { margin-bottom: 16px; font-family: var(--display); font-size: 1.45rem; line-height: 1.55; letter-spacing: .02em; }
+.profile-facts { display: grid; grid-template-columns: 3em 1fr; gap: 6px 14px; margin-top: 20px; padding-top: 18px; font-size: .9rem; border-top: 2px dashed var(--soft-line); }
+.profile-facts dt { font-weight: 700; color: var(--ink-sub); }
+.awards { padding: 22px 24px; }
+.awards-title { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 1rem; font-weight: 700; }
+.awards-title i { color: #b07d00; }
+.awards-list { list-style: none; display: grid; gap: 10px; }
+.awards-list li { display: grid; grid-template-columns: 4.6em 1fr; gap: 8px; font-size: .86rem; line-height: 1.6; }
+.awards-list time { font-weight: 700; color: var(--ink-sub); font-variant-numeric: tabular-nums; }
+.awards-link { display: block; width: fit-content; font-weight: 700; text-underline-offset: 3px; }
+.awards-link::after, .point-link::after, .stat-go::after { content: ' →'; }
+
+/* 見てほしいところ(根拠の作品・活動へ飛ぶ) */
+.points-title { margin: 40px 0 16px; font-size: 1.05rem; font-weight: 700; }
+.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.point {
+  display: flex; flex-direction: column; gap: 8px; padding: 20px 22px;
+  background: var(--paper); border: 2px solid var(--line); box-shadow: 6px 6px 0 var(--line);
+}
+.point-no { font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--soft-line); }
+.point-head { font-size: 1.1rem; font-weight: 700; }
+.point p { font-size: .9rem; line-height: 1.85; }
+.point-link { margin-top: auto; padding-top: 6px; font-size: .88rem; font-weight: 700; text-underline-offset: 4px; }
+
+/* 実績タイルはリンク */
+a.stat-tile { color: inherit; text-decoration: none; transition: background .15s; }
+a.stat-tile:hover { background: #fff8d6; }
+.stat-go { margin-top: 6px; font-size: .78rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* リーダータグ */
+.k-leader {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 1px 8px; font-size: .75rem; font-weight: 700; line-height: 1.6;
+  color: var(--ink); background: #ffd23f; border: 2px solid var(--line);
+}
+.k-leader::before { content: '\f521'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: .9em; }
+.kind .k-leader { padding: 1px 8px; }
+.activity-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+
+/* ジャンプしてきた先を一瞬光らせる */
+.is-target { animation: target-flash 1.6s ease-out; }
+@keyframes target-flash {
+  0%, 30% { outline: 4px solid #ffd23f; outline-offset: 6px; }
+  100% { outline: 4px solid transparent; outline-offset: 6px; }
+}
+
 /* ========================================
    Skills
 ======================================== */
@@ -249,7 +297,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .activity-card:has(img) { grid-column: 1 / -1; }
 /* 写真つき(全幅)の後に奇数枚残ったとき、最後の1枚を全幅にして空きマスを作らない */
 .activity-card:has(img) ~ .activity-card:last-child:nth-child(even) { grid-column: 1 / -1; }
-.activity-card img { display: block; width: 100%; max-height: 420px; margin-bottom: 16px; object-fit: cover; border: 2px solid var(--line); }
+.activity-card img { display: block; width: 100%; height: auto; margin-bottom: 16px; border: 2px solid var(--line); }
 .activity-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .activity-icon {
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
@@ -383,6 +431,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .game.wide .info { border-left: 0; border-top: 6px solid var(--c); }
   .skills-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .activities-list { grid-template-columns: 1fr; }
+  .profile { grid-template-columns: 1fr; }
+  .points { grid-template-columns: 1fr; gap: 16px; }
   .links-grid { grid-template-columns: 1fr; gap: 14px; }
   .stat-tile { padding: 16px 14px; }
   .stat-number { font-size: 1.6rem; }
@@ -414,6 +464,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .stat-number { font-size: 1.4rem; }
   .stat-label { font-size: .78rem; line-height: 1.5; }
   .stat-note { display: none; }
+  .stat-go { font-size: .7rem; }
+  .profile-catch { font-size: 1.2rem; }
+  .profile-facts { grid-template-columns: 1fr; gap: 0; }
+  .profile-facts dd { margin-bottom: 8px; }
+  .awards, .point { padding: 18px; box-shadow: 4px 4px 0 var(--line); }
+  .filters { flex-wrap: wrap; }
+  .filter { flex: 1 1 40%; }
 
   .section { padding: 48px 0; }
   .sec-title { font-size: 2rem; }
